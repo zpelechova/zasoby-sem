@@ -73,7 +73,9 @@ h1 {
 }
 
 .content {
-  margin: 3em;
+  margin: auto;
+  width: 62vw;
+  min-height: 38vh;
   padding: 1em;
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9D9065;
@@ -93,6 +95,7 @@ h1 {
   background-image: url(../assets/img/road-5019069_about_us.jpg);
   display: flex;
   flex-basis: 100vw;
+  height: 88vh;
   justify-content: center;
   align-items: flex-start;
   min-height: 62vh;
@@ -123,31 +126,18 @@ h1 {
 }
 
 @media screen and (min-width: 992px) {
-  .background__image {
-    min-height: 62vh;
-    padding: 8vh 0vw 8vh 0vw;
-    margin-bottom: 19vh;
-  }
-.delivery__container {
-  width: 62vw;
-}
-}
-
-/* @media screen and (min-width: 1200px) {
-  .background__image {
-    flex-basis: 62vw;
+ .background__image {
     min-height: 73vh;
-    padding: 8vh 19vh 8vh 19vh;
+    flex-basis: 62vw;
+    padding: 8vh 0vw 8vh 0vw;
+    border-radius: 5%;
     margin-bottom: 19vh;
   }
 
-  .content[data-v-5d0d7ea8] {
-    width: 38vw;
-    border: 5px solid #9d9065;
-    padding: 1em;
+  .content {
+    width:32vw;
+    margin: auto;
+    border-radius: 5%;
   }
-  .delivery__container {
-  width: 62vw;
-  } */
-/* } */
+}
 </style>

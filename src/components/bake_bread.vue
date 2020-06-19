@@ -62,10 +62,12 @@ h1 {
 }
 
 .content {
-  margin: 3em;
+  margin: auto;
+  width: 62vw;
+  min-height: 38vh;
   padding: 1em;
   opacity: 0.75;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 8px #9D9065;
   background-color: #fff9e8;
 }
 
@@ -104,28 +106,19 @@ h1 {
 }
 
 @media screen and (min-width: 992px) {
-  .background__image {
+ .background__image {
     min-height: 73vh;
+    width: 62vw;
+    margin:0 auto;
     padding: 8vh 0vw 8vh 0vw;
+    border-radius: 5%;
     margin-bottom: 19vh;
   }
-  .bake__bread__container {
-    width: 62vw;
+
+  .content {
+    width:32vw;
+    margin: auto;
+    border-radius: 5%;
   }
 }
-
-/* @media screen and (min-width: 1200px) {
-  .background__image {
-    flex-basis: 62vw;
-    min-height: 62vh;
-    padding: 8vh 19vh 8vh 19vh;
-    margin-bottom: 19vh
-  }
-
-  .content[data-v-5d0d7ea8] {
-    width: 38vw;
-    border: 5px solid #9D9065;
-    padding: 1em;
-} */
-/* } */
 </style>

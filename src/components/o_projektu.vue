@@ -71,33 +71,19 @@ h1 {
 
 @media screen and (min-width: 992px) {
 
-.background__image{
+ .background__image {
     min-height: 73vh;
-    padding: 8vh 0vw 8vh 0vw;
-    margin-bottom: 19vh;
-}
-
-.about__us__container {
-  width: 62vw;
-  }
-}
-
-/* @media screen and (min-width: 1200px) {
-  .background__image {
     flex-basis: 62vw;
-    min-height: 62vh;
-    padding: 8vh 19vh 8vh 19vh;
-    margin-bottom: 19vh
+    margin:0 auto;
+    padding: 8vh 0vw 8vh 0vw;
+    border-radius: 5%;
+    margin-bottom: 19vh;
   }
 
-  .content[data-v-5d0d7ea8] {
-    width: 38vw;
-    border: 5px solid #9D9065;
-    padding: 1em;
+  .content {
+    width:32vw;
+    margin: auto;
+    border-radius: 5%;
+  }
 }
-.about__us__container {
-  width: 62vw;
-  }
-} */
-
 </style>

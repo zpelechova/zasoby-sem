@@ -52,61 +52,64 @@ export default {
   border: 0px;
 }
 html {
-  width: 100vw;
-  height: 100vh;
   font-family: "Cormorant", serif;
   font-weight: bold;
   color: #9d9065;
-  font-size: 15px;
 }
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: #fff9e8;
 }
 .top__navigation {
   display: flex;
   max-width: 62vw;
+  height: 19vh;
   margin: 0 auto;
 }
 .closed__menu {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   flex-grow: 1;
 }
 .about__us,
 .pro__rozvozce {
   margin: 3vh;
+  font-size: 2.5vh;
   text-decoration: none;
   color: #9d9065;
+  font-style: italic;
+  letter-spacing: 3px;
 }
 .icon {
   display: none;
 }
 .zasoby_logo {
-  width: 8vw;
-  margin: 3vh;
-  margin-left: 4vh;
-  flex-grow: 1;
+ width: 15vw;
+    height: auto;
+    margin-top: 8vh;
+    position: absolute;
+    z-index: 2;
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 991px) {
   .top__navigation {
     display: block;
     max-width: none;
+    height: 10vh;
   }
   .home {
-    height: 13vh;
-    margin-bottom: 3vh;
+    height: 10vh;
   }
   .zasoby_logo {
-    width: 20vw;
+    width: 35vw;
     height: auto;
-    margin: 3vw;
+    margin: 0px;
+    position: absolute;
+    z-index: 2;
   }
   i.hamburger {
-    font-size: 15vw;
+    font-size: 8vw;
     margin: 3vw;
+    text-shadow: 2px 2px 8px #9d9065
   }
   .menu {
     background-color: #9d9065;
@@ -124,10 +127,6 @@ body {
     margin-bottom: 3vh;
     display: none;
   }
-  /* .top__navigation {
-  overflow: hidden;
-  background-color: #fff9e8;
-} */
   .zasoby_logo,
   .icon {
     float: left;
@@ -139,11 +138,14 @@ body {
     text-align: center;
     color: #fff9e8;
     text-decoration: none;
-    font-size: 3vh;
+    font-size: 3.5vh;
     margin: 3vw;
+    border: 2px dotted #ffe355;
+
   }
   .zasoby_logo:hover {
     background-color: #ffe355;
+    box-shadow: 0 0 10px 8px #ffe355;
   }
   .top__navigation a.icon {
     float: right;
@@ -152,24 +154,11 @@ body {
   .top__navigation a:hover {
     background-color: #ffe355;
     color: #9d9065;
+    box-shadow: 0 0 10px 8px #ffe355;
   }
-  /* k čemu je tohle? */
   .top__navigation a.active {
     background-color: #9d9065;
     color: #fff9e8;
   }
-  /* .top__navigation__open {
-      position: relative;
-    } */
-  /* .top__navigation__open .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    } */
-  /* .top__navigation__open a {
-      float: none;
-      display: block;
-      text-align: left;
-    } */
 }
 </style>
