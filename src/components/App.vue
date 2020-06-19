@@ -1,15 +1,15 @@
+
+
 <template>
   <div>
     <div class="top__navigation">
       <div class="home">
-        <router-link 
-        to="/"
-        class="zasoby">
+        <router-link to="/">
           <img
             class="zasoby_logo"
             border="0"
             alt="Zasoby_sem_logo"
-            src="../assets/img/zasoby_logo.png"
+            src="..\assets\img\zasoby_logo.png"
           />
         </router-link>
         <a @click="toggle" class="icon">
@@ -51,7 +51,6 @@ export default {
   margin: 0px;
   border: 0px;
 }
-
 html {
   width: 100vw;
   height: 100vh;
@@ -60,148 +59,117 @@ html {
   color: #9d9065;
   font-size: 15px;
 }
-
 body {
   width: 100vw;
   height: 100vh;
   background-color: #fff9e8;
 }
-
 .top__navigation {
-    display: flex;
-    height: 19vh;
-    width: 62vw;
-    /* margin-left: auto;
-    margin-right: auto; */
+  display: flex;
+  max-width: 62vw;
+  margin: 0 auto;
 }
-
 .closed__menu {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
   flex-grow: 1;
 }
-
-/* .menu {
-  position: absolute;
-} */
 .about__us,
 .pro__rozvozce {
   margin: 3vh;
   text-decoration: none;
   color: #9d9065;
-  font-size: 3vh;
 }
-
-/* .zasoby{
-  position: relative;
-  top: 19px;
-} */
- /* .pro__rozvozce {
-   margin: 3vh 0vw 3vh 0vw;
-   } */
-
 .icon {
   display: none;
 }
-
 .zasoby_logo {
-  width: 15vw;
+  width: 8vw;
   margin: 3vh;
   margin-left: 4vh;
-  flex-grow: 1
+  flex-grow: 1;
 }
-
 @media screen and (max-width: 575px) {
-.top__navigation {
-  display: block;
-  width: 100vw;
-}
-.home {
-  height: 10vh;
-  margin-bottom: 3vh;
-}
-
-.zasoby_logo {
-  width: 20vw;
-  height: auto;
-  margin: 3vw;
-}
-
-i.hamburger {
-  font-size: 15vw;
-  margin: 3vw;
-}
-
-.menu {
+  .top__navigation {
+    display: block;
+    max-width: none;
+  }
+  .home {
+    height: 13vh;
+    margin-bottom: 3vh;
+  }
+  .zasoby_logo {
+    width: 20vw;
+    height: auto;
+    margin: 3vw;
+  }
+  i.hamburger {
+    font-size: 15vw;
+    margin: 3vw;
+  }
+  .menu {
     background-color: #9d9065;
     box-shadow: 0 0 10px 8px #9d9065;
-    margin-top: 3vh;
     margin-bottom: 3vh;
-}
-
-.closed__menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .closed__menu {
     background-color: #9d9065;
     box-shadow: 0 0 10px 8px #9d9065;
     margin-top: 3vh;
     margin-bottom: 3vh;
     display: none;
-}
-/* .top__navigation {
+  }
+  /* .top__navigation {
   overflow: hidden;
   background-color: #fff9e8;
 } */
-
-.zasoby_logo,
-.icon {
-  float: left;
-  display: block;
-}
-
-.about__us,
-.pro__rozvozce {
+  .zasoby_logo,
+  .icon {
+    float: left;
+    display: block;
+  }
+  .about__us,
+  .pro__rozvozce {
     display: block;
     text-align: center;
     color: #fff9e8;
     text-decoration: none;
     font-size: 3vh;
     margin: 3vw;
-}
-.zasoby_logo:hover {
-  background-color: #ffe355;
-}
-
+  }
+  .zasoby_logo:hover {
+    background-color: #ffe355;
+  }
   .top__navigation a.icon {
     float: right;
     display: block;
   }
-
-.top__navigation a:hover {
-  background-color: #ffe355;
-  color: #9d9065;
-}
-/* k čemu je tohle? */
-.top__navigation a.active {
-  background-color: #9d9065;
-  color: #fff9e8;
-}
-
-
-
-
-
-    /* .top__navigation__open {
+  .top__navigation a:hover {
+    background-color: #ffe355;
+    color: #9d9065;
+  }
+  /* k čemu je tohle? */
+  .top__navigation a.active {
+    background-color: #9d9065;
+    color: #fff9e8;
+  }
+  /* .top__navigation__open {
       position: relative;
     } */
-    /* .top__navigation__open .icon {
+  /* .top__navigation__open .icon {
       position: absolute;
       right: 0;
       top: 0;
     } */
-    /* .top__navigation__open a {
+  /* .top__navigation__open a {
       float: none;
       display: block;
       text-align: left;
     } */
-    }
+}
 </style>

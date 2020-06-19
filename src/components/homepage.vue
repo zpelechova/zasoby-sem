@@ -2,7 +2,7 @@
   <div class="homepage__container">
     <div class="background__image">
       <div class="content">
-        <p>KDO MI DOVEZE NÁKUP?</p>
+        <h1>KDO MI DOVEZE NÁKUP?</h1>
         <form action="" class="find__your__retailer">
           <div class="address">
             <input
@@ -96,8 +96,10 @@ input:focus {
 .btn:focus {
   outline-color: #ffe355;
 }
+
 h1 {
-  font-size: 3vh;
+    font-size: 3.5vh;
+    text-align: center;
 }
 .content p {
   font-family: Cabin;
@@ -108,7 +110,7 @@ h1 {
 }
 
 .content {
-  margin: 3em;
+  margin: 4em;
   padding: 1em;
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9D9065;
