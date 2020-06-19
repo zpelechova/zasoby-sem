@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <form method="post" v-on:submit.prevent="sendEmails">
+        <label for="name">Jméno</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Jan Novák"
+          v-model="name"
+          autofocus
+          required
+        />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="jan.novak@potraviny.cz"
+          v-model="email"
+          required
+        />
+        <label for="shopName">Jméno obchodu</label>
+        <input
+          type="text"
+          id="shopName"
+          placeholder="Houska"
+          v-model="shopName"
+          required
+        />
+        <label for="webPage">Webová stránka</label>
+        <input
+          type="url"
+          id="webPage"
+          placeholder="http://www.houska.cz"
+          v-model="webPage"
+          required
+        />
+        <label for="message">Zpráva</label>
+        <input
+          type="textarea"
+          id="message"
+          placeholder="Ještě vám chci napsat, že"
+          v-model="message"
+        />
+        <button type="submit" >Přidejte se k Zásoby sem</button>
+      </form>
+    </div>
+    <script src="mail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <script>
+      Loader.load();
+    </script>
+  </head>
+  <body>
+    <input type="text" id="street" placeholder="street" />
+    <input type="text" id="city" placeholder="city" />
+    <input type="text" id="zip" placeholder="zip" />
+    <button>Najdi se na mapě</button>
+    <p>Adresa je</p>
+    <div id="output"></div>
+    <div id="map" style="height: 300px;"></div>
+    <script src="mapi.js"></script>
+  </body>
+</html> 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zasoby sem</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      Loader.load();
+    </script>
+  </head>
+  <body>
+    <br />
+    <div id="app">
+      <div class="container">
+        <span>Ulice</span>
+        <input
+          type="text"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+          id="street"
+          v-model="street"
+        />
+        <span>Město</span>
+        <input
+          type="text"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+          id="city"
+          v-model="city"
+        />
+        <span>PSČ</span>
+        <input
+          type="text"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+          id="zip"
+          v-model="zip"
+        />
+        <button v-on:click="display">
+          Zobrazit nejbližší volný slot
+        </button>
+        <div id="result" v-model="result"></div>
+        <div id="warning" v-model="warning"></div>
+        <p id="loading" v-if="loading">
+          <img
+            id="truck"
+            src="https://cdn.dribbble.com/users/889322/screenshots/7792483/media/92dc9f2741129a8af0133c77e51c9699.gif"
+            alt="Načítá se"
+          />
+        </p>
+        <div id="map" style="height: 300px;"></div>
+      </div>
+    </div>
+    <script src="kosik.js"></script>
+    <script src="mapi.js"></script>
+  </body>
+</html>
