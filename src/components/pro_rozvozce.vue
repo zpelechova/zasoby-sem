@@ -93,6 +93,7 @@ h1 {
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9D9065;
   background-color: #fff9e8;
+  border-radius: 5%;
 }
 
 .pro__rozvozce__container {
@@ -107,7 +108,9 @@ h1 {
 .background__image {
   background-image: url(../assets/img/woodland-656969_registration.jpg);
   display: flex;
+  border-radius: 5%;
   flex-basis: 95vw;
+  height:88vh;
   justify-content: center;
   align-items: flex-start;
   min-height: 62vh;
@@ -130,6 +133,11 @@ h1 {
     flex-basis: 62vw;
     padding: 8vh 0vw 8vh 0vw;
     margin-bottom: 19vh;
+  }
+
+  .content {
+    width:32vw;
+    margin: auto;
   }
 }
 

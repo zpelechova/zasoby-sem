@@ -58,6 +58,7 @@ export default {
  .town__or__village,
  .postcode {
     width: 100%;
+    margin: auto;
     border: 1px solid #9d9065;
     color: #9d9065;
     font-family: Cabin;
@@ -110,7 +111,9 @@ h1 {
 }
 
 .content {
-  margin: 4em;
+  margin: auto;
+  width: 62vw;
+  height: 38vh;
   padding: 1em;
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9D9065;
@@ -118,9 +121,8 @@ h1 {
 }
 
 .homepage__container {
-    max-height: 85vh;
-    margin-left: auto;
-    margin-right: auto;
+    height: 89vh;
+    margin: 0 auto;
     width: 95vw;
     display: flex;
     flex-direction: column;
@@ -182,32 +184,16 @@ h1 {
   }
 
   .background__image {
-    min-height: 62vh;
-        padding: 8vh 8vw 8vh 8vw;
-  }
-  .homepage__container {
-  height: auto;
-  width: 62vw;
-}
-.kosik__logo, 
-.rohlik__logo, 
-.tesco__logo {
-    width: 10vw;
-    height: auto;
-}
-}
-
-/* @media screen and (min-width: 1200px) {
-  .background__image {
+    height: 62vh;
     flex-basis: 62vw;
-    min-height: 62vh;
-   padding: 8vh 8vw 8vh 8vw;
+    padding: 8vh 0vw 8vh 0vw;
+    border-radius: 5%;
   }
 
   .content {
-    width: 38vw;
-    border: 5px solid #9d9065;
-    padding: 1em;
+    width:32vw;
+    margin: auto;
+    border-radius: 5%;
   }
   .homepage__container {
   height: auto;
@@ -219,5 +205,5 @@ h1 {
     width: 10vw;
     height: auto;
 }
-} */
+}
 </style>
