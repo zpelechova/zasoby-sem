@@ -57,7 +57,7 @@ h1 {
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9D9065;
   background-color: #fff9e8;
-  border-radius: 5%;
+  border-radius: 30px;
 }
 
 .parcels__container {
@@ -81,7 +81,7 @@ h1 {
   background-size: cover;
   background-position: center center;
   box-shadow: 0 0 10px 8px #9d9065;
-  border-radius: 5%;
+  border-radius: 30px;
 }
 
 .kosik__logo,

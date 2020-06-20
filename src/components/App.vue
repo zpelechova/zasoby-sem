@@ -1,5 +1,3 @@
-
-
 <template>
   <div>
     <div class="top__navigation">
@@ -24,10 +22,7 @@
     <router-view></router-view>
   </div>
 </template>
-// <button
-//         class="btn" :class="{'btn-active':active}"
-//         v-on:click="isOpen"
-//       >
+
 <script>
 export default {
   name: "App",
@@ -90,6 +85,7 @@ body {
     position: absolute;
     z-index: 2;
 }
+
 @media screen and (max-width: 991px) {
   .top__navigation {
     display: block;
@@ -143,10 +139,7 @@ body {
     border: 2px dotted #ffe355;
 
   }
-  .zasoby_logo:hover {
-    background-color: #ffe355;
-    box-shadow: 0 0 10px 8px #ffe355;
-  }
+
   .top__navigation a.icon {
     float: right;
     display: block;

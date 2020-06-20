@@ -55,7 +55,7 @@ h1 {
   width: 80vw;
   display: block;
   margin: 0vh 2vw 5vh 2vw;
-  border-radius: 5%;
+  border-radius: 30px;
   box-shadow: 0 0 10px 8px #9d9065;
   margin-top: 3vh;
 }
@@ -77,7 +77,7 @@ h1 {
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
-  border-radius: 5%;
+  border-radius: 30px;
 }
 
 .bake__bread__container {
@@ -99,7 +99,7 @@ h1 {
   background-size: cover;
   background-position: center center;
   box-shadow: 0 0 10px 8px #9d9065;
-  border-radius: 5%;
+  border-radius: 30px;
   display: block;
   padding: 20px;
   margin: 2vh 2vw;
