@@ -31,9 +31,9 @@
               <img class="tesco__logo" border="0" alt="tesco__logo" src="assets\img\tesco_logo.png" />
             </a>
           </div>
-          <div id="result">{{ result }}</div>
         </div>
         <p>JEN ČÁST SORTIMENTU K VÁM DOVÁŽÍ:</p>
+        <p>{{results.kosik}}</p>
       </div>
     </div>
   </div>
@@ -46,25 +46,23 @@ export default {
   data() {
     return {
       loading: true,
-      result: ""
+      results: {
+        "kosik": "1",
+        "rohlik": "2",
+        "tesco": "3"
+      }
     };
   },
-methods: {
+  methods: {
     display() {
       const street = this.$route.query.street;
       const city = this.$route.query.city;
       const zip = this.$route.query.zip;
       let counter = 2;
-      let results = [];
       const notify = message => {
-        results.push(message);
         if (counter === 0) {
           this.loading = false;
           console.log(results);
-          this.result = results
-          // for (let res = 0; res < results.length; res++) {
-          //   result.textContent += results[res];
-          // }
         }
       };
       // rohlik
@@ -93,11 +91,11 @@ methods: {
       fetch(proxyUrl + kosikUrl)
         .then(kosikResp => kosikResp.json())
         .then(kosikJson => {
-          // result.textContent = `Nejdříve vám Košík přiveze nákup ${kosikJson.earliest_timeslot}.`;
           if (kosikJson.times[0] === "8:00 - 18:00") {
             warning.textContent = " Ale dovážíme jen část sortimentu...";
           }
           counter--;
+          this.results.kosik = kosikJson.earliest_timeslot;
           notify(kosikJson.earliest_timeslot);
         });
     }
