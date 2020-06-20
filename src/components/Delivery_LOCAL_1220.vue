@@ -1,43 +1,66 @@
 <template class = "to__retailers">
-  <div
-    class="parcels__container">
-      <div class="background__image">
-
-         
-          <div class="content">
-          <p>NA VAŠI ADRESU ZASÍLÁ TRVANLIVÝ SORTIMENT:</p> 
-         <p>Na eshop se dostanete skrz logo rozvozce.</p>
+  <div class="delivery__container">
+    <div class="background__image">
+      <div class="content">
+        <p>NÁKUP NA VAŠI ADRESU VÁM MŮŽE PŘIVÉZT</p>
+        <p>Mezi rozvozovými časy eshopů přepínejte přes logo rozvozce.</p>
+        <div class="retailer__logos">
           <a href="https://www.kosik.cz/" target="_blank">
             <img
               class="kosik__logo"
               border="0"
               alt="kosik__logo"
-              src="assets\img\kosik_logo.png"
+              src="..\assets\img\kosik_logo.png"
+            />
+          </a>
+          <a href="https://rohlik.cz" target="_blank">
+            <img
+              class="rohlik__logo"
+              border="0"
+              alt="rohlik__logo"
+              src="..\assets\img\rohlik_logo.png"
             />
           </a>
           <a href="https://nakup.itesco.cz/groceries/" target="_blank">
             <img
               class="tesco__logo"
               border="0"
-              alt="kosik__logo"
-              src="assets\img\tesco_logo.png"
+              alt="tesco__logo"
+              src="..\assets\img\tesco_logo.png"
             />
           </a>
-          <p>Čerstvé pečivo si sice neobjednáte, ale nebuďte smutní, objednejte si mouku a upečte si svoje vlastní domácí pečivo. Jak na to se dozvíte <router-link to="/bake_bread" class="bake__bread">ZDE</router-link>.</p> 
-         
-         
         </div>
+        <p>????? MÁ ČAS PŘIVÉZT ZÁSOBY:</p>
+
+        <p>INFORMACE K ROZVOZU:</p>
+        <p>Tady se mají načítat informace o ceně dopravy, výši minimálního odběru</p>
+        <a 
+        href="https://www.kosik.cz/stranky/caste-dotazy?kampan=paticka" 
+        target="_blank"
+        class="link"
+        >JAK NAKUPOVAT NA KOŠÍKU</a>
+        <a 
+        href="https://www.rohlik.cz/stranka/caste-dotazy" 
+        target="_blank"
+        class="link">JAK NAKUPOVAT NA ROHLÍKU</a>
+        <a 
+        href="https://itesco.cz/sluzby-a-znacky/nakupy/vase-prvni-online-nakupy/" 
+        target="_blank"
+        class="link">JAK NAKUPOVAT NA TESCU</a>
+
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Parcels",
+  name: "Delivery"
 };
 </script>
 
 <style scoped>
+
 h1 {
   font-size: 3vh;
 }
@@ -60,7 +83,7 @@ h1 {
   border-radius: 5%;
 }
 
-.parcels__container {
+.delivery__container {
   min-height: 62vh;
   margin-left: auto;
   margin-right: auto;
@@ -70,9 +93,9 @@ h1 {
 }
 
 .background__image {
-  background-image: url(../assets/img/full_supplies_not_available_road.jpg);
+  background-image: url(../assets/img/road-5019069_about_us.jpg);
   display: flex;
-  flex-basis: 95vw;
+  flex-basis: 100vw;
   height: 88vh;
   justify-content: center;
   align-items: flex-start;
@@ -85,17 +108,23 @@ h1 {
 }
 
 .kosik__logo,
+.rohlik__logo,
 .tesco__logo {
   width: 5vw;
-  height:auto;
+  height: auto;
 }
 
-.bake__bread {
+.link {
   text-decoration: none;
   color: darkred;
 }
 @media screen and (min-width: 576px) and (max-width: 991px) {
 
+  .background__image {
+    min-height: 62vh;
+    padding: 8vh 0vw 8vh 0vw;
+    margin-bottom: 19vh;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -105,17 +134,13 @@ h1 {
     padding: 8vh 0vw 8vh 0vw;
     margin-bottom: 19vh;
   }
-
-  .homepage__container {
+.homepage__container {
   height: 62vh;
   width: 62vw;
 }
-
   .content {
     width:32vw;
     margin: auto;
   }
-
 }
-
 </style>
