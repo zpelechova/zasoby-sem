@@ -19,7 +19,7 @@ new Vue({
       fetch(proxyUrl + targetUrl)
         .then((resp) => resp.json())
         .then((json) => {
-          result.textContent = `Nejdříve vám Košík přiveze nákup ${json.earliest_timeslot}.`;
+          console.log(json);
           this.loading = false;
           if (json.times[0] === "8:00 - 18:00"){
             warning.textContent = " Ale dovážíme jen část sortimentu..." 

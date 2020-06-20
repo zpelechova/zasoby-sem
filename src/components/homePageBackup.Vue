@@ -39,22 +39,67 @@
 </template>
 
 <script>
-import { router } from "../index.js";
+import {router} from "../index.js"
 export default {
   name: "Homepage",
   data() {
     return {
       street: "",
       city: "",
-      zip: ""
+      zip: "",
+      loading: false
     };
   },
   methods: {
     display() {
-      router.push({
-        path: "delivery",
-        query: { street: this.street, city: this.city, zip: this.zip }
-      });
+      this.loading = true;
+      let counter = 2;
+      let results = [];
+      const notify = message => {
+        results.push(message);
+        if (counter === 0) {
+          this.loading = false;
+          console.log(results);
+          // for (let res = 0; res < results.length; res++) {
+          //   result.textContent += results[res];
+          // }
+          router.push("delivery", results)
+        }
+
+      };
+      // rohlik
+      const rohlikUrl =
+        "https://api.apify.com/v2/acts/zuzka~rohlik/run-sync?token=WDXyEPPmbeKBX5eHAyiszBHQ7&timeout=600";
+
+      fetch(rohlikUrl, {
+        body: `{"street": "${this.street}", "city": "${this.city}", "zip": "${this.zip}"}`,
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(rohlikResp => rohlikResp.json())
+        .then(rohlikJson => {
+          counter--;
+          notify(rohlikJson.message);
+        });
+
+      // kosik
+      const encodeURIParam = stringParam => {
+        return encodeURI(stringParam.replace(/\s/g, "+"));
+      };
+      const kosikUrl = `https://www.kosik.cz/api/web/transport/windows?street=${encodeURIParam(
+        this.street
+      )}&city=${encodeURIParam(this.city)}&zip=${encodeURIParam(this.zip)}`;
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      fetch(proxyUrl + kosikUrl)
+        .then(kosikResp => kosikResp.json())
+        .then(kosikJson => {
+          // result.textContent = `Nejdříve vám Košík přiveze nákup ${kosikJson.earliest_timeslot}.`;
+          if (kosikJson.times[0] === "8:00 - 18:00") {
+            warning.textContent = " Ale dovážíme jen část sortimentu...";
+          }
+          counter--;
+          notify(kosikJson.earliest_timeslot);
+        });
     }
   }
 };
