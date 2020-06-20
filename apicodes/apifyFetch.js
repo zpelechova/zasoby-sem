@@ -6,7 +6,7 @@ fetch(url, {
   "headers": { 'Content-Type': 'application/json' }
 }
 )
-  .then((resp) => resp.json())
-  // .then((json) => console.log(json.data));
-  .then((json) => console.log(json));
+.then((rohlikResp) => rohlikResp.json())
+// .then((json) => console.log(json.data));
+.then((rohlikJson) => console.log(rohlikJson));
 
