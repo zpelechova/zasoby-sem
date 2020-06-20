@@ -47,9 +47,6 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 3vh;
-}
 
 .bread__img {
   width: 80vw;

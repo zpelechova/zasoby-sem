@@ -122,10 +122,6 @@ input:focus {
   outline-color: #ffe355;
 }
 
-h1 {
-  font-size: 3.5vh;
-  text-align: center;
-}
 .content p {
   font-family: Cabin;
   margin-bottom: 2vh;
