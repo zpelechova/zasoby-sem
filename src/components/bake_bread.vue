@@ -3,14 +3,14 @@
     <div class="background__image">
       <div class="content">
         <h1>KVÁSKOVÝ CHLÉB</h1>
-        <p>ROZKVAS:</p>
-        <ul>
+        <p class="ingredience">ROZKVAS:</p>
+        <ul class="ingredience">
           <li>100 g žitné chlebové mouky</li>
           <li>100 g vody</li>
           <li>1 polévková lžíce kvásku</li>
         </ul>
         <p>TĚSTO:</p>
-        <ul>
+        <ul class="ingredience">
           <li>rozkvas</li>
           <li>600 g pšeničné chlebové mouky</li>
           <li>430 g vody</li>
@@ -33,13 +33,10 @@
             class="baking__tips"
             target="_blank"
           >RADY A TIPY O PEČENÍ CHLEBA</a>
-          </p>
+        </p>
       </div>
+      <img src="../assets/img/sourdough-bread.jpg" alt="bread" class="bread__img" />
     </div>
-    <img 
-          src="../assets/img/sourdough-bread.jpg" 
-          alt="bread"
-          class="bread__img">
   </div>
 </template>
 
@@ -53,6 +50,15 @@ export default {
 h1 {
   font-size: 3vh;
 }
+
+.bread__img {
+  width: 80vw;
+  display: block;
+  margin: 0vh 2vw 5vh 2vw;
+  border-radius: 5%;
+  box-shadow: 0 0 10px 8px #9d9065;
+  margin-top: 3vh;
+}
 .content p {
   font-family: Cabin;
   font-size: 2vh;
@@ -61,14 +67,17 @@ h1 {
   text-align: justify;
 }
 
+.ingredience {
+  font-family: Cormorant;
+}
+
 .content {
   margin: auto;
-  width: 62vw;
-  min-height: 38vh;
   padding: 1em;
   opacity: 0.75;
-  box-shadow: 0 0 10px 8px #9D9065;
+  box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
+  border-radius: 5%;
 }
 
 .bake__bread__container {
@@ -90,35 +99,39 @@ h1 {
   background-size: cover;
   background-position: center center;
   box-shadow: 0 0 10px 8px #9d9065;
+  border-radius: 5%;
+  display: block;
+  padding: 20px;
+  margin: 2vh 2vw;
 }
 
-.baking__tips{
+.baking__tips {
   text-decoration: none;
   color: darkred;
 }
 
 @media screen and (min-width: 576px) and (max-width: 991px) {
   .background__image {
-    min-height: 62vh;
-    padding: 8vh 0vw 8vh 0vw;
-    margin-bottom: 19vh;
   }
 }
 
 @media screen and (min-width: 992px) {
- .background__image {
+  .background__image {
     min-height: 73vh;
     width: 62vw;
-    margin:0 auto;
-    padding: 8vh 0vw 8vh 0vw;
-    border-radius: 5%;
+    flex-basis: 62vw;
+    margin: auto;
     margin-bottom: 19vh;
   }
 
   .content {
-    width:32vw;
-    margin: auto;
-    border-radius: 5%;
+    /* min-width: 62vh; */
+  }
+
+  .bread__img {
+    width: 57vw;
+    margin: 3vh auto;
+
   }
 }
 </style>

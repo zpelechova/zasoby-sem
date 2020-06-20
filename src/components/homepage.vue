@@ -111,8 +111,6 @@ h1 {
 }
 .content p {
   font-family: Cabin;
-  font-size: 2vh;
-  margin-top: 2vh;
   margin-bottom: 2vh;
   text-align: justify;
 }
@@ -125,6 +123,7 @@ h1 {
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
+  border-radius: 5%;
 }
 
 .homepage__container {
@@ -147,6 +146,7 @@ h1 {
   background-size: cover;
   background-position: center center;
   box-shadow: 0 0 10px 8px #9d9065;
+  border-radius: 5%;
 }
 
 .retailer__logos {
@@ -193,21 +193,20 @@ h1 {
     height: 62vh;
     flex-basis: 62vw;
     padding: 8vh 0vw 8vh 0vw;
-    border-radius: 5%;
   }
 
   .content {
     width: 32vw;
     margin: auto;
-    border-radius: 5%;
+
   }
   .homepage__container {
-    height: auto;
-    width: 62vw;
-  }
-  .kosik__logo,
-  .rohlik__logo,
-  .tesco__logo {
+  height: 62vh;
+  width: 62vw;
+}
+.kosik__logo, 
+.rohlik__logo, 
+.tesco__logo {
     width: 10vw;
     height: auto;
   }
