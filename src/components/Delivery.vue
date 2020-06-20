@@ -3,8 +3,6 @@
     <div class="background__image">
       <div class="content">
         <h1>ZÁSOBY VÁM MŮŽE DORUČIT:</h1>
-        <!-- <p>Mezi rozvozovými časy eshopů přepínejte přes logo rozvozce.</p> -->
-
         <div class="retailer__logos">
           <div id="kosikReturn">
             <div id="logoKosik" class="free__slots">
@@ -17,8 +15,8 @@
                 />
               </a>
             </div>
-            <div id="kosikSlot" class="free__slots">NEJDŘÍVE V:</div>
-            <div id="kosikDelivers" class="free__slots">INFORMACE:</div>
+            <div id="kosikSlot" class="free__slots"> {{ results.kosikSlot }}</div>
+            <div id="kosikDelivers" class="free__slots">{{ results.kosikDelivers }} </div>
           </div>
           <div id="rohlikReturn">
             <div id="logo_rohlik" class="free__slots">
@@ -31,8 +29,8 @@
                 />
               </a>
             </div>
-            <div id="rohlikSlot" class="free__slots">NEJDŘÍVE V:</div>
-            <div id="rohlikDelivers" class="free__slots">INFORMACE:</div>
+            <div id="rohlikSlot" class="free__slots"> {{ results.rohlikSlot }}</div>
+            <div id="rohlikDelivers" class="free__slots">{{ results.rohlikDelivers }} </div>
           </div>
           <div id="tescoReturn">
             <div class="free__slots">
@@ -45,12 +43,11 @@
                 />
               </a>
             </div>
-            <div id="tescoSlot" class="free__slots">NEJDŘÍVE V:</div>
-            <div id="tescoDelivers" class="free__slots">INFORMACE:</div>
+            <div id="tescoSlot" class="free__slots"> {{ results.tescoSlot }}</div>
+            <div id="tescoDelivers" class="free__slots">{{ results.tescoDelivers }} </div>
           </div>
         </div>
         <p>JEN ČÁST SORTIMENTU K VÁM DOVÁŽÍ:</p>
-        <p>{{results.kosik}}</p>
       </div>
     </div>
   </div>
@@ -64,10 +61,19 @@ export default {
     return {
       loading: true,
       results: {
-        "kosik": "1",
-        "rohlik": "2",
-        "tesco": "3"
-      }
+        kosikSlot: "",
+        rohlikSlot: "",
+        tescoSlot: "",
+        kosikDelivers: "",
+        rohlikDelivers: "",
+        tescoDelivers: ""
+      },
+      rohlikSlot: "",
+      kosikSlot: "",
+      tesco: "",
+      rohlikDelivers: "Celý sortiment",
+      kosikDelivers: "Celý sortiment",
+      tescoDelivers: "Celý sortiment"
     };
   },
   methods: {
@@ -76,13 +82,18 @@ export default {
       const city = this.$route.query.city;
       const zip = this.$route.query.zip;
       let counter = 2;
-      const notify = message => {
+      const notify = () => {
         if (counter === 0) {
           this.loading = false;
-          console.log(results);
+          this.results.rohlikSlot = this.rohlikSlot;
+          this.results.kosikSlot = this.kosikSlot;
+          this.results.tescoSlot = this.tescoSlot;
+          this.results.rohlikDelivers = this.rohlikDelivers;
+          this.results.kosikDelivers = this.kosikDelivers;
+          this.results.tescoDelivers = this.tescoDelivers;
         }
       };
-      // rohlik
+      // rohlik API
       const rohlikUrl =
         "https://api.apify.com/v2/acts/zuzka~rohlik/run-sync?token=WDXyEPPmbeKBX5eHAyiszBHQ7&timeout=600";
 
@@ -94,7 +105,11 @@ export default {
         .then(rohlikResp => rohlikResp.json())
         .then(rohlikJson => {
           counter--;
-          notify(rohlikJson.message);
+          this.rohlikSlot = rohlikJson.message;
+          if (rohlikJson.message === "Na vaši adresu zatím nedoručujeme.") {
+            this.rohlikDelivers = "Suchý sortiment/takže nic";
+          }
+          notify();
         });
 
       // kosik
@@ -108,11 +123,11 @@ export default {
       fetch(proxyUrl + kosikUrl)
         .then(kosikResp => kosikResp.json())
         .then(kosikJson => {
-          if (kosikJson.times[0] === "8:00 - 18:00") {
-            warning.textContent = " Ale dovážíme jen část sortimentu...";
-          }
           counter--;
-          this.results.kosik = kosikJson.earliest_timeslot;
+          this.kosikSlot = kosikJson.earliest_timeslot;
+          if (kosikJson.times[0] === "8:00 - 18:00") {
+            this.kosikDelivers = "Suchý sortiment";
+          }
           notify(kosikJson.earliest_timeslot);
         });
     }
@@ -127,11 +142,11 @@ export default {
 #kosikReturn,
 #rohlikReturn,
 #tescoReturn div {
-margin-bottom: 2vh;
+  margin-bottom: 2vh;
 }
 
-.free__slots{
-  margin:1em;
+.free__slots {
+  margin: 1em;
   text-align: center;
 }
 
@@ -214,13 +229,13 @@ margin-bottom: 2vh;
     margin-bottom: 19vh;
   }
 
-#kosikReturn,
-#rohlikReturn,
-#tescoReturn {
-  display: flex;
+  #kosikReturn,
+  #rohlikReturn,
+  #tescoReturn {
+    display: flex;
 
-  margin-bottom: 2vh;
-}
+    margin-bottom: 2vh;
+  }
 
   .content {
     width: 50vw;
@@ -229,9 +244,9 @@ margin-bottom: 2vh;
   }
 
   .kosik__logo,
-.rohlik__logo,
-.tesco__logo {
-  width: 10vw;
-}
+  .rohlik__logo,
+  .tesco__logo {
+    width: 10vw;
+  }
 }
 </style>
