@@ -61,15 +61,27 @@ export default {
 </script>
 
 <style scoped>
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .form_item {
-  width: 100%;
-  margin: auto;
-  border: 1px solid #9d9065;
-  color: #9d9065;
-  font-family: Cabin;
-  text-align: center;
-  margin: 1vh;
-  padding: 1vh;
+    width: 90%;
+    margin: auto;
+    border: 1px solid #9d9065;
+    color: #9d9065;
+    font-family: Cabin;
+    text-align: center;
+    margin: 1vh;
+    padding: 1vh;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
 ::placeholder {
@@ -87,12 +99,17 @@ export default {
   color: #9d9065;
 }
 
+input,
+button {
+  border-radius: 9px;
+}
+
 input:focus {
   outline-color: #ffe355;
 }
 
 .btn {
-  width: 100%;
+  width: 90%;
   background-color: #9d9065;
   color: #fff9e8;
   font-family: Cabin;
@@ -116,14 +133,16 @@ h1 {
 }
 
 .content {
-  margin: auto;
-  width: 62vw;
-  height: 38vh;
-  padding: 1em;
-  opacity: 0.75;
-  box-shadow: 0 0 10px 8px #9d9065;
-  background-color: #fff9e8;
-  border-radius: 5%;
+    display: flex;
+    min-height: 38vh;
+    padding: 1em;
+    opacity: 0.75;
+    box-shadow: 0 0 10px 8px #9d9065;
+    background-color: #fff9e8;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .homepage__container {
@@ -140,13 +159,13 @@ h1 {
   flex-grow: 4;
   flex-shrink: 4;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 62vh;
   background-color: #9d9065;
   background-size: cover;
   background-position: center center;
   box-shadow: 0 0 10px 8px #9d9065;
-  border-radius: 5%;
+  border-radius: 30px;
 }
 
 .retailer__logos {

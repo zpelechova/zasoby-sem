@@ -134,7 +134,7 @@ export default {
 
 <style scoped>
 .form_item {
-  width: 100%;
+  width: 80%;
   border: 1px solid #9d9065;
   color: #9d9065;
   font-family: Cabin;
@@ -161,7 +161,7 @@ input:focus {
 }
 
 .btn {
-  width: 100%;
+  width: 80%;
   background-color: #9d9065;
   color: #fff9e8;
   font-family: Cabin;
@@ -191,7 +191,7 @@ h1 {
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
-  border-radius: 5%;
+  border-radius: 30px;
   text-align: center;
 
 }
@@ -208,7 +208,7 @@ h1 {
 .background__image {
   background-image: url(../assets/img/woodland-656969_registration.jpg);
   display: flex;
-  border-radius: 5%;
+  border-radius: 30px;
   flex-basis: 95vw;
   height: 88vh;
   justify-content: center;
@@ -218,6 +218,11 @@ h1 {
   background-size: cover;
   background-position: center center;
   box-shadow: 0 0 10px 8px #9d9065;
+}
+
+input,
+button {
+  border-radius: 9px;
 }
 
 @media screen and (min-width: 576px) and (max-width: 991px) {
