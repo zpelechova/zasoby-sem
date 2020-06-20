@@ -8,5 +8,5 @@ fetch(url, {
 )
 .then((rohlikResp) => rohlikResp.json())
 // .then((json) => console.log(json.data));
-.then((rohlikJson) => console.log(rohlikJson));
+.then((rohlikJson) => console.log(rohlikJson.message));
 

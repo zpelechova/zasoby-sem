@@ -3,36 +3,32 @@
     <div class="background__image">
       <div class="content">
         <p>NÁKUP NA VAŠI ADRESU VÁM MŮŽE PŘIVÉZT</p>
-        <p>Mezi rozvozovými časy eshopů přepínejte přes logo rozvozce.</p>
+        <!-- <p>Mezi rozvozovými časy eshopů přepínejte přes logo rozvozce.</p> -->
         <div class="retailer__logos">
-          <a href="https://www.kosik.cz/" target="_blank">
-            <img
-              class="kosik__logo"
-              border="0"
-              alt="kosik__logo"
-              src="assets\img\kosik_logo.png"
-            />
-          </a>
-          <a href="https://rohlik.cz" target="_blank">
-            <img
-              class="rohlik__logo"
-              border="0"
-              alt="rohlik__logo"
-              src="assets\img\rohlik_logo.png"
-            />
-          </a>
-          <a href="https://nakup.itesco.cz/groceries/" target="_blank">
-            <img
-              class="tesco__logo"
-              border="0"
-              alt="tesco__logo"
-              src="assets\img\tesco_logo.png"
-            />
-          </a>
+          <div id="return"> <div id="delivers"></div> <div id="slot"></div>
+            <a href="https://www.kosik.cz/" target="_blank">
+              <img class="kosik__logo" border="0" alt="kosik__logo" src="assets\img\kosik_logo.png" />
+            </a>
+          </div>
+          <div id="return"> <div id="delivers"></div> <div id="slot"></div>
+            <a href="https://rohlik.cz" target="_blank">
+              <img
+                class="rohlik__logo"
+                border="0"
+                alt="rohlik__logo" 
+                src="assets\img\rohlik_logo.png"
+              />
+            </a>
+          </div>
+          <div id="return"> <div id="delivers"></div> <div id="slot"></div>
+            <a href="https://nakup.itesco.cz/groceries/" target="_blank">
+              <img class="tesco__logo" border="0" alt="tesco__logo" src="assets\img\tesco_logo.png" />
+            </a>
+          </div>
         </div>
-        <p>????? MÁ ČAS PŘIVÉZT ZÁSOBY:</p>
+        <p>JEN ČÁST SORIMENTU K VÁM DOVÁŽÍ:</p>
 
-        <p>INFORMACE K ROZVOZU:</p>
+        <!-- <p>INFORMACE K ROZVOZU:</p>
         <p>Tady se mají načítat informace o ceně dopravy, výši minimálního odběru</p>
         <a 
         href="https://www.kosik.cz/stranky/caste-dotazy?kampan=paticka" 
@@ -46,8 +42,7 @@
         <a 
         href="https://itesco.cz/sluzby-a-znacky/nakupy/vase-prvni-online-nakupy/" 
         target="_blank"
-        class="link">JAK NAKUPOVAT NA TESCU</a>
-
+        class="link">JAK NAKUPOVAT NA TESCU</a>-->
       </div>
     </div>
   </div>
@@ -60,7 +55,6 @@ export default {
 </script>
 
 <style scoped>
-
 h1 {
   font-size: 3vh;
 }
@@ -78,7 +72,7 @@ h1 {
   min-height: 38vh;
   padding: 1em;
   opacity: 0.75;
-  box-shadow: 0 0 10px 8px #9D9065;
+  box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
 }
 
@@ -117,7 +111,6 @@ h1 {
   color: darkred;
 }
 @media screen and (min-width: 576px) and (max-width: 991px) {
-
   .background__image {
     min-height: 62vh;
     padding: 8vh 0vw 8vh 0vw;
@@ -126,7 +119,7 @@ h1 {
 }
 
 @media screen and (min-width: 992px) {
- .background__image {
+  .background__image {
     min-height: 73vh;
     flex-basis: 62vw;
     padding: 8vh 0vw 8vh 0vw;
@@ -135,7 +128,7 @@ h1 {
   }
 
   .content {
-    width:32vw;
+    width: 32vw;
     margin: auto;
     border-radius: 5%;
   }

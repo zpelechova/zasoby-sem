@@ -36,7 +36,6 @@ new Vue({
       )
         .then((rohlikResp) => rohlikResp.json())
         .then((rohlikJson) => {
-          // rohlik.textContent = rohlikJson.message;
           counter--;
           notify(rohlikJson.message);
         });
