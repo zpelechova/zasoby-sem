@@ -1,6 +1,6 @@
 <template class = "to__retailers">
   <div class="delivery__container">
-    <div class="background__image">
+    <div v-bind:class="{ background__image:delivery, background__image_parcels: parcels }">
       <div class="content">
         <h1>ZÁSOBY VÁM MŮŽE DORUČIT:</h1>
         <!-- <p>Mezi rozvozovými časy eshopů přepínejte přes logo rozvozce.</p> -->
@@ -62,7 +62,9 @@ export default {
   data() {
     return {
       loading: true,
-      result: ""
+      result: "",
+      delivery: true,
+      parcels: false,
     };
   },
   methods: {
@@ -116,11 +118,22 @@ export default {
           counter--;
           notify(kosikJson.earliest_timeslot);
         });
+    },
+  pictureChange() {
+    this.delivery = ! this.delivery;
+    this.parcels = ! this.parcels;
+  },
+  backgroundChange() {
+    if (this.rohlikDelivers !=="Celý sortiment" && 
+        this.kosikDelivers !== "Celý sortiment" &&
+        this.tescoDelivers !== "Celý sortiment") {
+      pictureChange();
     }
+  }
   },
   mounted() {
     this.display();
-  }
+  },
 };
 </script>
 
@@ -178,6 +191,21 @@ margin-bottom: 2vh;
   display: flex;
   flex-basis: 100vw;
   min-height: 88vh;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 62vh;
+  background-color: #9d9065;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 0 10px 8px #9d9065;
+  border-radius: 30px;
+}
+
+.background__image_parcels {
+  background-image: url(../assets/img/full_supplies_not_available_road.jpg);
+  display: flex;
+  flex-basis: 95vw;
+  height: 88vh;
   justify-content: center;
   align-items: flex-start;
   min-height: 62vh;
