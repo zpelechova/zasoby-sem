@@ -1,39 +1,27 @@
 <template class = "to__retailers">
-  <div
-    class="parcels__container">
-      <div class="background__image">
-
-         
-          <div class="content">
-          <p>NA VAŠI ADRESU ZASÍLÁ TRVANLIVÝ SORTIMENT:</p> 
-         <p>Na eshop se dostanete skrz logo rozvozce.</p>
-          <a href="https://www.kosik.cz/" target="_blank">
-            <img
-              class="kosik__logo"
-              border="0"
-              alt="kosik__logo"
-              src="assets\img\kosik_logo.png"
-            />
-          </a>
-          <a href="https://nakup.itesco.cz/groceries/" target="_blank">
-            <img
-              class="tesco__logo"
-              border="0"
-              alt="kosik__logo"
-              src="assets\img\tesco_logo.png"
-            />
-          </a>
-          <p>Čerstvé pečivo si sice neobjednáte, ale nebuďte smutní, objednejte si mouku a upečte si svoje vlastní domácí pečivo. Jak na to se dozvíte <router-link to="/bake_bread" class="bake__bread">ZDE</router-link>.</p> 
-         
-         
-        </div>
+  <div class="parcels__container">
+    <div class="background__image">
+      <div class="content">
+        <p>NA VAŠI ADRESU ZASÍLÁ TRVANLIVÝ SORTIMENT:</p>
+        <p>Na eshop se dostanete skrz logo rozvozce.</p>
+        <a href="https://www.kosik.cz/" target="_blank">
+          <img class="kosik__logo" border="0" alt="kosik__logo" src="assets\img\kosik_logo.png" />
+        </a>
+        <a href="https://nakup.itesco.cz/groceries/" target="_blank">
+          <img class="tesco__logo" border="0" alt="kosik__logo" src="assets\img\tesco_logo.png" />
+        </a>
+        <p>
+          Čerstvé pečivo si sice neobjednáte, ale nebuďte smutní, objednejte si mouku a upečte si svoje vlastní domácí pečivo. Jak na to se dozvíte
+          <router-link to="/bake_bread" class="bake__bread">ZDE</router-link>.
+        </p>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Parcels",
+  name: "Parcels"
 };
 </script>
 
@@ -55,7 +43,7 @@ h1 {
   min-height: 38vh;
   padding: 1em;
   opacity: 0.75;
-  box-shadow: 0 0 10px 8px #9D9065;
+  box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
   border-radius: 5%;
 }
@@ -87,7 +75,7 @@ h1 {
 .kosik__logo,
 .tesco__logo {
   width: 5vw;
-  height:auto;
+  height: auto;
 }
 
 .bake__bread {
@@ -95,11 +83,10 @@ h1 {
   color: darkred;
 }
 @media screen and (min-width: 576px) and (max-width: 991px) {
-
 }
 
 @media screen and (min-width: 992px) {
- .background__image {
+  .background__image {
     height: 62vh;
     flex-basis: 62vw;
     padding: 8vh 0vw 8vh 0vw;
@@ -107,15 +94,13 @@ h1 {
   }
 
   .homepage__container {
-  height: 62vh;
-  width: 62vw;
-}
-
-  .content {
-    width:32vw;
-    margin: auto;
+    height: 62vh;
+    width: 62vw;
   }
 
+  .content {
+    width: 32vw;
+    margin: auto;
+  }
 }
-
 </style>

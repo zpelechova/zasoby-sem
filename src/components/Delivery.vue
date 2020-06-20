@@ -31,9 +31,9 @@
               <img class="tesco__logo" border="0" alt="tesco__logo" src="assets\img\tesco_logo.png" />
             </a>
           </div>
+          <div id="result">{{ result }}</div>
         </div>
-        <p>JEN ČÁST SORIMENTU K VÁM DOVÁŽÍ:</p>
-        <div id="result">{{ result }}</div>
+        <p>JEN ČÁST SORTIMENTU K VÁM DOVÁŽÍ:</p>
       </div>
     </div>
   </div>
@@ -45,11 +45,15 @@ export default {
   props: ["street", "city", "zip"],
   data() {
     return {
-      loading: true
+      loading: true,
+      result: ""
     };
   },
-  methods: {
+methods: {
     display() {
+      const street = this.$route.query.street;
+      const city = this.$route.query.city;
+      const zip = this.$route.query.zip;
       let counter = 2;
       let results = [];
       const notify = message => {
@@ -57,10 +61,10 @@ export default {
         if (counter === 0) {
           this.loading = false;
           console.log(results);
+          this.result = results
           // for (let res = 0; res < results.length; res++) {
           //   result.textContent += results[res];
           // }
-          router.push("delivery", results);
         }
       };
       // rohlik
@@ -68,7 +72,7 @@ export default {
         "https://api.apify.com/v2/acts/zuzka~rohlik/run-sync?token=WDXyEPPmbeKBX5eHAyiszBHQ7&timeout=600";
 
       fetch(rohlikUrl, {
-        body: `{"street": "${this.street}", "city": "${this.city}", "zip": "${this.zip}"}`,
+        body: `{"street": "${street}", "city": "${city}", "zip": "${zip}"}`,
         method: "POST",
         headers: { "Content-Type": "application/json" }
       })
@@ -83,8 +87,8 @@ export default {
         return encodeURI(stringParam.replace(/\s/g, "+"));
       };
       const kosikUrl = `https://www.kosik.cz/api/web/transport/windows?street=${encodeURIParam(
-        this.street
-      )}&city=${encodeURIParam(this.city)}&zip=${encodeURIParam(this.zip)}`;
+        street
+      )}&city=${encodeURIParam(city)}&zip=${encodeURIParam(zip)}`;
       const proxyUrl = "https://cors-anywhere.herokuapp.com/";
       fetch(proxyUrl + kosikUrl)
         .then(kosikResp => kosikResp.json())
@@ -98,9 +102,8 @@ export default {
         });
     }
   },
-  beforeMount() {
-    console.log(this.street);
-    // display();
+  mounted() {
+    this.display();
   }
 };
 </script>
