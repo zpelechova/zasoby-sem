@@ -57,6 +57,7 @@ h1 {
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9D9065;
   background-color: #fff9e8;
+  border-radius: 5%;
 }
 
 .parcels__container {
@@ -80,6 +81,7 @@ h1 {
   background-size: cover;
   background-position: center center;
   box-shadow: 0 0 10px 8px #9d9065;
+  border-radius: 5%;
 }
 
 .kosik__logo,
@@ -98,17 +100,20 @@ h1 {
 
 @media screen and (min-width: 992px) {
  .background__image {
-    min-height: 73vh;
+    height: 62vh;
     flex-basis: 62vw;
     padding: 8vh 0vw 8vh 0vw;
-    border-radius: 5%;
     margin-bottom: 19vh;
   }
+
+  .homepage__container {
+  height: 62vh;
+  width: 62vw;
+}
 
   .content {
     width:32vw;
     margin: auto;
-    border-radius: 5%;
   }
 
 }

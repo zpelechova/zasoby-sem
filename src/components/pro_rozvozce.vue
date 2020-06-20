@@ -60,7 +60,8 @@
 
 <script>
 export default {
-  name: "Pro__rozvozce",
+  name: "Pro_rozvozce",
+
   methods: {
     sendEmails() {
       // sending email to the customer
@@ -107,16 +108,14 @@ export default {
 
 ::placeholder {
   color: #9d9065;
-  opacity: 1; /* Firefox */
+  opacity: 1; 
 }
 
 :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: #9d9065;
 }
 
 ::-ms-input-placeholder {
-  /* Microsoft Edge */
   color: #9d9065;
 }
 
@@ -144,8 +143,6 @@ h1 {
 .content p {
   font-family: Cabin;
   font-size: 2vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
   text-align: justify;
 }
 
@@ -172,7 +169,7 @@ h1 {
   display: flex;
   border-radius: 5%;
   flex-basis: 95vw;
-  height:88vh;
+  height: 88vh;
   justify-content: center;
   align-items: flex-start;
   min-height: 62vh;
@@ -187,30 +184,19 @@ h1 {
 
 @media screen and (min-width: 992px) {
   .background__image {
-    min-height: 73vh;
+    height: 62vh;
     flex-basis: 62vw;
-    padding: 8vh 0vw 8vh 0vw;
     margin-bottom: 19vh;
   }
 
+  .homepage__container {
+  height: 62vh;
+  width: 62vw;
+}
+
   .content {
-    width:32vw;
+    width: 32vw;
     margin: auto;
   }
 }
-
-/* @media screen and (min-width: 1200px) {
-  .background__image {
-    flex-basis: 62vw;
-    min-height: 62vh;
-    padding: 8vh 19vh 8vh 19vh;
-    margin-bottom: 19vh;
-  }
-
-  .content[data-v-5d0d7ea8] {
-    width: 38vw;
-    border: 5px solid #9d9065;
-    padding: 1em;
-  }
-} */
 </style>
