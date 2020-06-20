@@ -20,6 +20,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "moment": "^2.27.0",
     "vue": "^2.6.10",
     "vue-router": "^3.3.2"
   }
