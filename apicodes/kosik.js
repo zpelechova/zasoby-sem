@@ -21,8 +21,8 @@ new Vue({
         .then((json) => {
           console.log(json);
           this.loading = false;
-          if (json.times[0] === "8:00 - 18:00"){
-            warning.textContent = " Ale dovážíme jen část sortimentu..." 
+          if (json.times[0] === "8:00 - 18:00") {
+            warning.textContent = " Ale dovážíme jen část sortimentu..."
           }
         });
     }
