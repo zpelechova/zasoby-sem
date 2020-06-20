@@ -49,7 +49,6 @@
             id="message"
             v-model="message"
             placeholder="CHCEME VÁM VZKÁZAT"
-            required
           />
           <button class="btn" type="submit">PŘIDEJTE SE K ZÁSOBY SEM</button>
         </form>
@@ -60,7 +59,17 @@
 
 <script>
 export default {
-  name: "Pro__rozvozce",
+  name: "Pro_rozvozce",
+  data() {
+    return {
+      name: "",
+      email: "",
+      shopName: "",
+      webPage: "",
+      message: "",
+      myMail: "zasobysem@gmail.com"
+    };
+  },
   methods: {
     sendEmails() {
       // sending email to the customer
@@ -71,8 +80,19 @@ export default {
         To: this.email,
         From: this.myMail,
         Subject: "novy Vítejte na Zásoby sem",
-        // Body: `Vítejte na zásoby sem! Váš obchod ${this.shopName} už bude brzy rozvážet s námi, hurá! Co nejdříve se s Vámi spojíme! Tým Zásoby sem `,
-        Body: "<table border=1> <tr><td>blabla</td></tr> </table>"
+        Body: `<div
+        id="mailToCust"
+        style="font-size: larger; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #9d9065; display:inline-block; background-color: #fff9e8; border-radius: 10px; padding: 30px;"
+      >
+        <h2>Vítejte na zásoby sem!</h2>
+        <p>
+          Váš obchod <strong>${this.shopName}</strong> už bude možná brzy rozvážet <span>&#128656;</span>
+          s námi,
+          <strong>hurá!</strong>
+        </p>
+        <p>Co nejdříve se s Vámi spojíme!</p>
+        <p><strong><span>&#129309;</span> Tým Zásoby sem</strong></p>
+      </div>`
       });
       // sending email to myself about the new request
       const FormattedMessage = this.message
@@ -85,7 +105,25 @@ export default {
         To: this.myMail,
         From: this.myMail,
         Subject: "Další obchod chce k nám na stránku!",
-        Body: `Hurááá. Otevírají se nám nové obzory! Právě jsme obdrželi novou žádost o zařazení obchodu ${this.shopName} mezi naše zásobovače! Koukni na jejich webové stránky tady: ${this.webPage}. A pak honem napiš na email ${this.email}, kontaktní osoba je ${this.name}. Zásoby sem jedou!!! ${FormattedMessage}`
+        Body: `<div
+        id="mailToMe"
+        style="font-size: larger; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #9d9065; display:inline-block; background-color: #fff9e8; border-radius: 10px; padding: 30px;"
+              >
+        <h2>Hurááá. Otevírají se nám nové obzory! <span>&#128640;</span></h2>
+        <p>
+          Právě jsme obdrželi novou žádost o zařazení obchodu
+          <strong>${this.shopName}</strong> mezi naše zásobovače!
+        </p>
+        <p>
+          Koukni na jejich webové stránky ${this.webPage}.
+        </p>
+        <p>
+          A pak honem napiš na ${this.email}, kontaktní osoba je
+          <strong> ${this.name}.</strong>
+        </p>
+        <p><strong>Zásoby sem jedou!!! <span style='font-size:30px;'>&#128762;</span>
+        <p>${FormattedMessage}</p>
+      </div>`
       }).then(message =>
         alert("Už to k nám jede! Těšíme se, jak to spolu rozjedem!")
       );
@@ -172,7 +210,7 @@ h1 {
   display: flex;
   border-radius: 5%;
   flex-basis: 95vw;
-  height:88vh;
+  height: 88vh;
   justify-content: center;
   align-items: flex-start;
   min-height: 62vh;
@@ -194,7 +232,7 @@ h1 {
   }
 
   .content {
-    width:32vw;
+    width: 32vw;
     margin: auto;
   }
 }

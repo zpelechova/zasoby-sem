@@ -57,28 +57,3 @@
       id="mail"
       style="font-size: larger; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #9d9065; display:inline-block; background-color: #fff9e8; border-radius: 10px; padding: 30px;"
     >
-      <h2>Hurááá. Otevírají se nám nové obzory!</h2>
-      <p>
-        Právě jsme obdrželi novou žádost o zařazení obchodu
-        <strong>${this.shopName}</strong> mezi naše zásobovače!
-      </p>
-      <p>
-        Koukni na jejich webové stránky
-        <span style="text-decoration: underline"
-          ><a v-bind:href="${this.webPage}" target="_blank">tady</a></span
-        >.
-      </p>
-      <p>
-        A pak honem napiš na
-        <span>
-          <a v-bind:href="mailto:${this.email}">tento email</a>
-        </span>
-        , kontaktní osoba je
-        <strong> ${this.name}.</strong>
-      </p>
-      <p><strong>Zásoby sem jedou!!!</strong></p>
-      <p>${FormattedMessage}`</p>
-    </div>
-    <script src="mail.js"></script>
-  </body>
-</html>
