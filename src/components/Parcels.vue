@@ -26,9 +26,6 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 3vh;
-}
 .content p {
   font-family: Cabin;
   font-size: 2vh;

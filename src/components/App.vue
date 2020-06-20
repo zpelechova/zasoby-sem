@@ -53,7 +53,15 @@ html {
 }
 body {
   background-color: #fff9e8;
+  font-size: 20px;
 }
+
+h1 {
+font-size: 1.2em;
+text-align: center;
+font-family: Cormorant;
+}
+
 .top__navigation {
   display: flex;
   max-width: 62vw;
@@ -87,6 +95,14 @@ body {
 }
 
 @media screen and (max-width: 991px) {
+  body { 
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+  
   .top__navigation {
     display: block;
     max-width: none;

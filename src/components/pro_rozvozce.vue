@@ -174,8 +174,8 @@ input:focus {
   outline-color: #ffe355;
 }
 
-h1 {
-  font-size: 3vh;
+div.content h1 {
+  font-size: 1em;
   text-transform: uppercase;
 }
 .content p {
