@@ -9,7 +9,7 @@
             class="zasoby_logo"
             border="0"
             alt="Zasoby_sem_logo"
-            src="..\assets\img\zasoby_logo.png"
+            src="assets\img\zasoby_logo.png"
           />
         </router-link>
         <a @click="toggle" class="icon">

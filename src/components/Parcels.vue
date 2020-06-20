@@ -12,7 +12,7 @@
               class="kosik__logo"
               border="0"
               alt="kosik__logo"
-              src="..\assets\img\kosik_logo.png"
+              src="assets\img\kosik_logo.png"
             />
           </a>
           <a href="https://nakup.itesco.cz/groceries/" target="_blank">
@@ -20,7 +20,7 @@
               class="tesco__logo"
               border="0"
               alt="kosik__logo"
-              src="..\assets\img\tesco_logo.png"
+              src="assets\img\tesco_logo.png"
             />
           </a>
           <p>Čerstvé pečivo si sice neobjednáte, ale nebuďte smutní, objednejte si mouku a upečte si svoje vlastní domácí pečivo. Jak na to se dozvíte <router-link to="/bake_bread" class="bake__bread">ZDE</router-link>.</p> 

@@ -10,7 +10,7 @@
               class="kosik__logo"
               border="0"
               alt="kosik__logo"
-              src="..\assets\img\kosik_logo.png"
+              src="assets\img\kosik_logo.png"
             />
           </a>
           <a href="https://rohlik.cz" target="_blank">
@@ -18,7 +18,7 @@
               class="rohlik__logo"
               border="0"
               alt="rohlik__logo"
-              src="..\assets\img\rohlik_logo.png"
+              src="assets\img\rohlik_logo.png"
             />
           </a>
           <a href="https://nakup.itesco.cz/groceries/" target="_blank">
@@ -26,7 +26,7 @@
               class="tesco__logo"
               border="0"
               alt="tesco__logo"
-              src="..\assets\img\tesco_logo.png"
+              src="assets\img\tesco_logo.png"
             />
           </a>
         </div>

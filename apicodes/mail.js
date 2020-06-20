@@ -25,7 +25,7 @@ new Vue({
         <h2>Vítejte na zásoby sem!</h2>
         <p>
           Váš obchod <strong>${this.shopName}</strong> už bude možná brzy rozvážet
-          s námi,
+          s námi <span>&#129309;</span> <span>&#128656;</span>,
           <strong>hurá!</strong>
         </p>
         <p>Co nejdříve se s Vámi spojíme!</p>
@@ -45,7 +45,7 @@ new Vue({
         id="mailToMe"
         style="font-size: larger; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #9d9065; display:inline-block; background-color: #fff9e8; border-radius: 10px; padding: 30px;"
               >
-        <h2>Hurááá. Otevírají se nám nové obzory!</h2>
+        <h2>Hurááá. Otevírají se nám nové obzory! <span style='font-size:30px;'>&#128640;</span></h2>
         <p>
           Právě jsme obdrželi novou žádost o zařazení obchodu
           <strong>${this.shopName}</strong> mezi naše zásobovače!
@@ -53,7 +53,7 @@ new Vue({
         <p>
           Koukni na jejich webové stránky
           <span style="text-decoration: underline"
-            ><a v-bind:href="${this.webPage}" target="_blank">tady</a></span
+            ><a href="${this.webPage}" target="_blank">tady</a></span
           >, a ještě tady: ${this.webPage}.
         </p>
         <p>
@@ -64,7 +64,7 @@ new Vue({
           , kontaktní osoba je
           <strong> ${this.name}.</strong>
         </p>
-        <p><strong>Zásoby sem jedou!!!</strong></p>
+        <p><strong>Zásoby sem jedou!!! <span style='font-size:30px;'>&#128762;</span>
         <p>${FormattedMessage}</p>
       </div>`,
       }).then(

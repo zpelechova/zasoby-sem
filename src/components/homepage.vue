@@ -35,13 +35,13 @@
     </div>
     <div class="retailer__logos">
       <a href="https://www.kosik.cz/" target="_blank">
-        <img class="kosik__logo" border="0" alt="kosik__logo" src="..\assets\img\kosik_logo.png" />
+        <img class="kosik__logo" border="0" alt="kosik__logo" src="assets\img\kosik_logo.png" />
       </a>
       <a href="https://rohlik.cz" target="_blank">
-        <img class="rohlik__logo" border="0" alt="rohlik__logo" src="..\assets\img\rohlik_logo.png" />
+        <img class="rohlik__logo" border="0" alt="rohlik__logo" src="assets\img\rohlik_logo.png" />
       </a>
       <a href="https://nakup.itesco.cz/groceries/" target="_blank">
-        <img class="tesco__logo" border="0" alt="tesco__logo" src="..\assets\img\tesco_logo.png" />
+        <img class="tesco__logo" border="0" alt="tesco__logo" src="assets\img\tesco_logo.png" />
       </a>
     </div>
   </div>
