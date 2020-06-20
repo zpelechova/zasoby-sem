@@ -39,22 +39,67 @@
 </template>
 
 <script>
-import { router } from "../index.js";
+import {router} from "../index.js"
 export default {
   name: "Homepage",
   data() {
     return {
       street: "",
       city: "",
-      zip: ""
+      zip: "",
+      loading: false
     };
   },
   methods: {
     display() {
-      router.push({
-        path: "delivery",
-        query: { street: this.street, city: this.city, zip: this.zip }
-      });
+      this.loading = true;
+      let counter = 2;
+      let results = [];
+      const notify = message => {
+        results.push(message);
+        if (counter === 0) {
+          this.loading = false;
+          console.log(results);
+          // for (let res = 0; res < results.length; res++) {
+          //   result.textContent += results[res];
+          // }
+          router.push("delivery", results)
+        }
+
+      };
+      // rohlik
+      const rohlikUrl =
+        "https://api.apify.com/v2/acts/zuzka~rohlik/run-sync?token=WDXyEPPmbeKBX5eHAyiszBHQ7&timeout=600";
+
+      fetch(rohlikUrl, {
+        body: `{"street": "${this.street}", "city": "${this.city}", "zip": "${this.zip}"}`,
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(rohlikResp => rohlikResp.json())
+        .then(rohlikJson => {
+          counter--;
+          notify(rohlikJson.message);
+        });
+
+      // kosik
+      const encodeURIParam = stringParam => {
+        return encodeURI(stringParam.replace(/\s/g, "+"));
+      };
+      const kosikUrl = `https://www.kosik.cz/api/web/transport/windows?street=${encodeURIParam(
+        this.street
+      )}&city=${encodeURIParam(this.city)}&zip=${encodeURIParam(this.zip)}`;
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      fetch(proxyUrl + kosikUrl)
+        .then(kosikResp => kosikResp.json())
+        .then(kosikJson => {
+          // result.textContent = `Nejdříve vám Košík přiveze nákup ${kosikJson.earliest_timeslot}.`;
+          if (kosikJson.times[0] === "8:00 - 18:00") {
+            warning.textContent = " Ale dovážíme jen část sortimentu...";
+          }
+          counter--;
+          notify(kosikJson.earliest_timeslot);
+        });
     }
   }
 };
@@ -111,6 +156,8 @@ h1 {
 }
 .content p {
   font-family: Cabin;
+  font-size: 2vh;
+  margin-top: 2vh;
   margin-bottom: 2vh;
   text-align: justify;
 }
@@ -123,7 +170,6 @@ h1 {
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
-  border-radius: 5%;
 }
 
 .homepage__container {
@@ -146,7 +192,6 @@ h1 {
   background-size: cover;
   background-position: center center;
   box-shadow: 0 0 10px 8px #9d9065;
-  border-radius: 5%;
 }
 
 .retailer__logos {
@@ -193,20 +238,21 @@ h1 {
     height: 62vh;
     flex-basis: 62vw;
     padding: 8vh 0vw 8vh 0vw;
+    border-radius: 5%;
   }
 
   .content {
     width: 32vw;
     margin: auto;
-
+    border-radius: 5%;
   }
   .homepage__container {
-  height: 62vh;
-  width: 62vw;
-}
-.kosik__logo, 
-.rohlik__logo, 
-.tesco__logo {
+    height: auto;
+    width: 62vw;
+  }
+  .kosik__logo,
+  .rohlik__logo,
+  .tesco__logo {
     width: 10vw;
     height: auto;
   }

@@ -2,7 +2,7 @@
   <div class="pro__rozvozce__container">
     <div class="background__image">
       <div class="content">
-        <p>Chcete, aby naše skvělá stránka nabízela zákazníkům i Váš obchod?</p>
+        <h1>Chcete, aby naše skvělá stránka nabízela zákazníkům i Váš obchod?</h1>
         <p>Vyplňte formulář a my se Vám ozveme.</p>
         <form class="let__us__know" method="post" v-on:submit.prevent="sendEmails">
           <input
@@ -176,11 +176,13 @@ input:focus {
 
 h1 {
   font-size: 3vh;
+  text-transform: uppercase;
 }
 .content p {
   font-family: Cabin;
   font-size: 2vh;
-  text-align: justify;
+  text-align: center;
+  margin: 1vh;
 }
 
 .content {
@@ -190,6 +192,8 @@ h1 {
   box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
   border-radius: 5%;
+  text-align: center;
+
 }
 
 .pro__rozvozce__container {
