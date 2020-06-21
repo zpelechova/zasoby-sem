@@ -68,6 +68,7 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
   name: "Delivery",
   props: ["street", "city", "zip"],
@@ -119,9 +120,10 @@ export default {
         .then((rohlikResp) => rohlikResp.json())
         .then((rohlikJson) => {
           counter--;
-          this.rohlikSlot = rohlikJson.message;
+          this.rohlikSlot = moment(rohlikJson.message, "YYYY-MM-DD hh:mm").calendar();
           if (rohlikJson.message === "Na vaši adresu zatím nedoručujeme.") {
-            this.rohlikDelivers = "Suchý sortiment/takže nic";
+            this.rohlikDelivers = "";
+            this.rohlikSlot = "Na tuto adresu nerozváží";
           }
           notify();
         });
@@ -140,25 +142,26 @@ export default {
           counter--;
           this.kosikSlot = kosikJson.earliest_timeslot;
           if (kosikJson.times[0] === "8:00 - 18:00") {
-            this.kosikDelivers = "Suchý sortiment";
+            this.kosikDelivers = "Jen suchý sortiment";
           }
           notify(kosikJson.earliest_timeslot);
         });
 
-      // preparing and calling kosik API
+      // preparing and calling kosik API Tesco
       const url =
         "https://api.apify.com/v2/acts/zuzka~tesco/run-sync?token=WDXyEPPmbeKBX5eHAyiszBHQ7&timeout=600";
       fetch(url, {
-        body: `{"zip": "15000"}`,
+        body: `{"zip": "${zip}"}`,
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
         .then((tescoResp) => tescoResp.json())
         .then((tescoJson) => {
           counter--;
-          this.tescoSlot = "doručuje";
+          this.tescoSlot = moment().add(1, 'days').startOf("hour").calendar();
           if (tescoJson.result === -1) {
-            this.tescoDelivers = "Suchý sortiment";
+            this.tescoDelivers = "Jen suchý sortiment";
+            this.tescoSlot = moment().add(3, 'days').startOf("hour").calendar();
           }
           notify();
         });
@@ -167,6 +170,9 @@ export default {
   mounted() {
     this.display();
   },
+  created() {
+    moment.locale('cs');
+  }
 };
 </script>
 
