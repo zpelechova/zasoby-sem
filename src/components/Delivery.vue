@@ -137,7 +137,6 @@ export default {
       })
         .then((rohlikResp) => rohlikResp.json())
         .then((rohlikJson) => {
-          counter--;
           this.rohlikSlot = moment(
             rohlikJson.message,
             "YYYY-MM-DD hh:mm"
@@ -146,7 +145,17 @@ export default {
             this.rohlikDelivers = "";
             this.rohlikSlot = "Na tuto adresu nerozváží";
           }
+        })
+        .catch(() => {
+          //sem napisu, co se ma stát kdyz fetch hodi error
+          console.log("Error on Rohlik fetch.");
+          this.rohlikSlot = "Něco nefunguje, zkuste to prosím později";
+          this.rohlikDelivers = "";
+        })
+        .then(() => {
+          counter--;
           notify();
+          console.log("Rohlik finished the run. Counter = " + counter);
         });
 
       // preparing and calling kosik API
@@ -164,14 +173,18 @@ export default {
           if (kosikJson.times[0] === "8:00 - 18:00") {
             this.kosikDelivers = "Jen suchý sortiment";
           }
-          notify();
-        }).catch(()=>{
-          //sem napisu, co se ma stát kdyz fetch hodi error
-          console.log("Error on Kosik fetch.")
-        }).then(()=>{
-          counter--;
         })
-        ;
+        .catch(() => {
+          //sem napisu, co se ma stát kdyz fetch hodi error
+          console.log("Error on Kosik fetch.");
+          this.kosikSlot = "Něco nefunguje, zkuste to prosím později";
+          this.kosikDelivers = "";
+        })
+        .then(() => {
+          counter--;
+          console.log("Kosik finished the run. Counter = " + counter);
+          notify();
+        });
 
       // preparing and calling kosik API Tesco
       const url =
@@ -183,7 +196,6 @@ export default {
       })
         .then((tescoResp) => tescoResp.json())
         .then((tescoJson) => {
-          counter--;
           this.tescoSlot = moment()
             .add(1, "days")
             .startOf("hour")
@@ -195,6 +207,16 @@ export default {
               .startOf("hour")
               .calendar();
           }
+        })
+        .catch(() => {
+          //sem napisu, co se ma stát kdyz fetch hodi error
+          console.log("Error on Tesco fetch.");
+          this.tescoSlot = "Něco nefunguje, zkuste to prosím později";
+          this.tescoDelivers = "";
+        })
+        .then(() => {
+          counter--;
+          console.log("Tesco finished the run. Counter = " + counter);
           notify();
         });
     },
@@ -355,15 +377,15 @@ export default {
   }
 
   .delivery__container {
-  height: unset;
-  width: 82vw;
-}
+    height: unset;
+    width: 82vw;
+  }
 
   .loading {
-  width: 50vw;
-  box-shadow: 0 0 10px 8px #9d9065;
-  border-radius: 30px;
-}
+    width: 50vw;
+    box-shadow: 0 0 10px 8px #9d9065;
+    border-radius: 30px;
+  }
 
   #kosikReturn,
   #rohlikReturn,
