@@ -1,6 +1,11 @@
 <template class="to__retailers">
   <div class="delivery__container">
-    <div v-bind:class="{ background__image:delivery, background__image_parcels: parcels }">
+    <div
+      v-bind:class="{
+        background__image: delivery,
+        background__image_parcels: parcels,
+      }"
+    >
       <div class="content loading" v-if="loading">
         <img id="truck" src="assets\img\loading_free.gif" alt="Načítá se" />
       </div>
@@ -62,8 +67,9 @@
             </div>
           </div>
         </div>
-        <p v-bind:class="{ no__information: !noRecipe, information: recipe}">
-          Čerstvé pečivo si sice neobjednáte, ale nebuďte smutní, objednejte si mouku a upečte si svůj vlastní domácí chleba. Jak na to se dozvíte:
+        <p v-bind:class="{ no__information: !noRecipe, information: recipe }">
+          Čerstvé pečivo si sice neobjednáte, ale nebuďte smutní, objednejte si
+          mouku a upečte si svůj vlastní domácí chleba. Jak na to se dozvíte:
           <router-link to="/bake_bread" class="bake__bread">ZDE</router-link>.
         </p>
       </div>
@@ -129,7 +135,10 @@ export default {
         .then((rohlikResp) => rohlikResp.json())
         .then((rohlikJson) => {
           counter--;
-          this.rohlikSlot = moment(rohlikJson.message, "YYYY-MM-DD hh:mm").calendar();
+          this.rohlikSlot = moment(
+            rohlikJson.message,
+            "YYYY-MM-DD hh:mm"
+          ).calendar();
           if (rohlikJson.message === "Na vaši adresu zatím nedoručujeme.") {
             this.rohlikDelivers = "";
             this.rohlikSlot = "Na tuto adresu nerozváží";
@@ -155,20 +164,6 @@ export default {
           }
           notify(kosikJson.earliest_timeslot);
         });
-    },
-  pictureChange() {
-    this.delivery = !this.delivery;
-    this.parcels = !this.parcels;
-    this.recipe = !this.recipe;
-    this.noRecipe = !this.noRecipe;
-  },
-  backgroundChange() {
-    if (this.rohlikDelivers !=="Celý sortiment" && 
-        this.kosikDelivers !== "Celý sortiment" &&
-        this.tescoDelivers !== "Celý sortiment") {
-      this.pictureChange();
-    }
- 
 
       // preparing and calling kosik API Tesco
       const url =
@@ -181,21 +176,44 @@ export default {
         .then((tescoResp) => tescoResp.json())
         .then((tescoJson) => {
           counter--;
-          this.tescoSlot = moment().add(1, 'days').startOf("hour").calendar();
+          this.tescoSlot = moment()
+            .add(1, "days")
+            .startOf("hour")
+            .calendar();
           if (tescoJson.result === -1) {
             this.tescoDelivers = "Jen suchý sortiment";
-            this.tescoSlot = moment().add(3, 'days').startOf("hour").calendar();
+            this.tescoSlot = moment()
+              .add(3, "days")
+              .startOf("hour")
+              .calendar();
           }
           notify();
         });
+    },
+    
+    // changing background based on delivery results
+    pictureChange() {
+      this.delivery = !this.delivery;
+      this.parcels = !this.parcels;
+      this.recipe = !this.recipe;
+      this.noRecipe = !this.noRecipe;
+    },
+    backgroundChange() {
+      if (
+        this.rohlikDelivers !== "Celý sortiment" &&
+        this.kosikDelivers !== "Celý sortiment" &&
+        this.tescoDelivers !== "Celý sortiment"
+      ) {
+        this.pictureChange();
+      }
     },
   },
   mounted() {
     this.display();
   },
   created() {
-    moment.locale('cs');
-  }
+    moment.locale("cs");
+  },
 };
 </script>
 
