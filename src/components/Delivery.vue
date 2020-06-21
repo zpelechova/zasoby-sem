@@ -6,8 +6,13 @@
         background__image_parcels: parcels,
       }"
     >
-      <div class="content loading" v-if="loading">
-        <img id="truck" src="assets\img\loading_free.gif" alt="Načítá se" />
+      <div class="content" v-if="loading">
+        <img
+          class="loading"
+          id="truck"
+          src="assets\img\loading_free.gif"
+          alt="Načítá se"
+        />
       </div>
       <div class="content" v-if="!loading">
         <h1>ZÁSOBY VÁM MŮŽE DORUČIT:</h1>
@@ -190,7 +195,7 @@ export default {
           notify();
         });
     },
-    
+
     // changing background based on delivery results
     pictureChange() {
       this.delivery = !this.delivery;
@@ -261,13 +266,18 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2vh auto;
   width: 62vw;
   min-height: 38vh;
-  padding: 1em;
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
+  border-radius: 30px;
+}
+
+.loading {
+  width: 62vw;
+  height: 38vh;
+  box-shadow: 0 0 10px 8px #9d9065;
   border-radius: 30px;
 }
 
@@ -283,11 +293,10 @@ export default {
 .background__image {
   background-image: url(../assets/img/road-5019069_about_us.jpg);
   display: flex;
-  flex-basis: 100vw;
-  min-height: 88vh;
+  flex-basis: 95vw;
+  height: 88vh;
   justify-content: center;
-  align-items: flex-start;
-  min-height: 62vh;
+  align-items: center;
   background-color: #9d9065;
   background-size: cover;
   background-position: center center;
@@ -322,7 +331,7 @@ export default {
 }
 @media screen and (min-width: 576px) and (max-width: 991px) {
   .background__image {
-    min-height: 62vh;
+    height: 88vh;
     padding: 8vh 0vw 8vh 0vw;
     margin-bottom: 19vh;
   }
@@ -330,12 +339,18 @@ export default {
 
 @media screen and (min-width: 992px) {
   .background__image {
-    min-height: 73vh;
+    height: 73vh;
     flex-basis: 62vw;
     padding: 8vh 0vw 8vh 0vw;
     border-radius: 5%;
     margin-bottom: 19vh;
   }
+
+  .loading {
+  width: 50vw;
+  box-shadow: 0 0 10px 8px #9d9065;
+  border-radius: 30px;
+}
 
   #kosikReturn,
   #rohlikReturn,
