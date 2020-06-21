@@ -1,4 +1,4 @@
-<template class = "homepage">
+<template class="homepage">
   <div class="homepage__container">
     <div class="background__image">
       <div class="content">

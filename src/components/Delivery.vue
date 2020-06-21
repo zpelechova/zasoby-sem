@@ -47,7 +47,10 @@
             <div id="tescoDelivers" class="free__slots">{{ results.tescoDelivers }} </div>
           </div>
         </div>
-        <p>JEN ČÁST SORTIMENTU K VÁM DOVÁŽÍ:</p>
+        <p v-bind:class="{ no__information: !noRecipe, information: recipe}">
+          Čerstvé pečivo si sice neobjednáte, ale nebuďte smutní, objednejte si mouku a upečte si svůj vlastní domácí chleba. Jak na to se dozvíte:
+          <router-link to="/bake_bread" class="bake__bread">ZDE</router-link>.
+        </p>
       </div>
     </div>
   </div>
@@ -60,6 +63,10 @@ export default {
   data() {
     return {
       loading: true,
+      delivery: true,
+      parcels: false,
+      noRecipe: false,
+      recipe: true,
       results: {
         kosikSlot: "",
         rohlikSlot: "",
@@ -73,7 +80,7 @@ export default {
       tesco: "",
       rohlikDelivers: "Celý sortiment",
       kosikDelivers: "Celý sortiment",
-      tescoDelivers: "Celý sortiment"
+      tescoDelivers: "Suchý sortiment"
     };
   },
   methods: {
@@ -91,6 +98,7 @@ export default {
           this.results.rohlikDelivers = this.rohlikDelivers;
           this.results.kosikDelivers = this.kosikDelivers;
           this.results.tescoDelivers = this.tescoDelivers;
+          this.backgroundChange();
         }
       };
       // rohlik API
@@ -132,14 +140,16 @@ export default {
         });
     },
   pictureChange() {
-    this.delivery = ! this.delivery;
-    this.parcels = ! this.parcels;
+    this.delivery = !this.delivery;
+    this.parcels = !this.parcels;
+    this.recipe = !this.recipe;
+    this.noRecipe = !this.noRecipe;
   },
   backgroundChange() {
     if (this.rohlikDelivers !=="Celý sortiment" && 
         this.kosikDelivers !== "Celý sortiment" &&
         this.tescoDelivers !== "Celý sortiment") {
-      pictureChange();
+      this.pictureChange();
     }
   }
   },
@@ -150,6 +160,19 @@ export default {
 </script>
 
 <style scoped>
+.bake__bread {
+  text-decoration: none;
+  color: darkred;
+}
+
+.information {
+  text-transform: uppercase;
+}
+
+.no__information {
+  display: none;
+}
+
 #kosikReturn,
 #rohlikReturn,
 #tescoReturn div {
@@ -159,6 +182,7 @@ export default {
 .free__slots {
   margin: 1em;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .retailer__logos {
