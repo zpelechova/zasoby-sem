@@ -1,7 +1,10 @@
-<template class = "to__retailers">
+<template class="to__retailers">
   <div class="delivery__container">
     <div v-bind:class="{ background__image:delivery, background__image_parcels: parcels }">
-      <div class="content">
+      <div class="content loading" v-if="loading">
+        <img id="truck" src="assets\img\loading_free.gif" alt="Načítá se" />
+      </div>
+      <div class="content" v-if="!loading">
         <h1>ZÁSOBY VÁM MŮŽE DORUČIT:</h1>
         <div class="retailer__logos">
           <div id="kosikReturn">
@@ -15,8 +18,12 @@
                 />
               </a>
             </div>
-            <div id="kosikSlot" class="free__slots"> {{ results.kosikSlot }}</div>
-            <div id="kosikDelivers" class="free__slots">{{ results.kosikDelivers }} </div>
+            <div id="kosikSlot" class="free__slots">
+              {{ results.kosikSlot }}
+            </div>
+            <div id="kosikDelivers" class="free__slots">
+              {{ results.kosikDelivers }}
+            </div>
           </div>
           <div id="rohlikReturn">
             <div id="logo_rohlik" class="free__slots">
@@ -29,8 +36,12 @@
                 />
               </a>
             </div>
-            <div id="rohlikSlot" class="free__slots"> {{ results.rohlikSlot }}</div>
-            <div id="rohlikDelivers" class="free__slots">{{ results.rohlikDelivers }} </div>
+            <div id="rohlikSlot" class="free__slots">
+              {{ results.rohlikSlot }}
+            </div>
+            <div id="rohlikDelivers" class="free__slots">
+              {{ results.rohlikDelivers }}
+            </div>
           </div>
           <div id="tescoReturn">
             <div class="free__slots">
@@ -43,8 +54,12 @@
                 />
               </a>
             </div>
-            <div id="tescoSlot" class="free__slots"> {{ results.tescoSlot }}</div>
-            <div id="tescoDelivers" class="free__slots">{{ results.tescoDelivers }} </div>
+            <div id="tescoSlot" class="free__slots">
+              {{ results.tescoSlot }}
+            </div>
+            <div id="tescoDelivers" class="free__slots">
+              {{ results.tescoDelivers }}
+            </div>
           </div>
         </div>
         <p v-bind:class="{ no__information: !noRecipe, information: recipe}">
@@ -73,14 +88,14 @@ export default {
         tescoSlot: "",
         kosikDelivers: "",
         rohlikDelivers: "",
-        tescoDelivers: ""
+        tescoDelivers: "",
       },
       rohlikSlot: "",
       kosikSlot: "",
       tesco: "",
       rohlikDelivers: "Celý sortiment",
       kosikDelivers: "Celý sortiment",
-      tescoDelivers: "Suchý sortiment"
+      tescoDelivers: "Celý sortiment",
     };
   },
   methods: {
@@ -88,7 +103,7 @@ export default {
       const street = this.$route.query.street;
       const city = this.$route.query.city;
       const zip = this.$route.query.zip;
-      let counter = 2;
+      let counter = 3;
       const notify = () => {
         if (counter === 0) {
           this.loading = false;
@@ -101,17 +116,17 @@ export default {
           this.backgroundChange();
         }
       };
-      // rohlik API
+      // preparing and calling rohlik API
       const rohlikUrl =
         "https://api.apify.com/v2/acts/zuzka~rohlik/run-sync?token=WDXyEPPmbeKBX5eHAyiszBHQ7&timeout=600";
 
       fetch(rohlikUrl, {
         body: `{"street": "${street}", "city": "${city}", "zip": "${zip}"}`,
         method: "POST",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
       })
-        .then(rohlikResp => rohlikResp.json())
-        .then(rohlikJson => {
+        .then((rohlikResp) => rohlikResp.json())
+        .then((rohlikJson) => {
           counter--;
           this.rohlikSlot = rohlikJson.message;
           if (rohlikJson.message === "Na vaši adresu zatím nedoručujeme.") {
@@ -120,8 +135,8 @@ export default {
           notify();
         });
 
-      // kosik
-      const encodeURIParam = stringParam => {
+      // preparing and calling kosik API
+      const encodeURIParam = (stringParam) => {
         return encodeURI(stringParam.replace(/\s/g, "+"));
       };
       const kosikUrl = `https://www.kosik.cz/api/web/transport/windows?street=${encodeURIParam(
@@ -129,8 +144,8 @@ export default {
       )}&city=${encodeURIParam(city)}&zip=${encodeURIParam(zip)}`;
       const proxyUrl = "https://cors-anywhere.herokuapp.com/";
       fetch(proxyUrl + kosikUrl)
-        .then(kosikResp => kosikResp.json())
-        .then(kosikJson => {
+        .then((kosikResp) => kosikResp.json())
+        .then((kosikJson) => {
           counter--;
           this.kosikSlot = kosikJson.earliest_timeslot;
           if (kosikJson.times[0] === "8:00 - 18:00") {
@@ -151,7 +166,26 @@ export default {
         this.tescoDelivers !== "Celý sortiment") {
       this.pictureChange();
     }
-  }
+ 
+
+      // preparing and calling kosik API
+      const url =
+        "https://api.apify.com/v2/acts/zuzka~tesco/run-sync?token=WDXyEPPmbeKBX5eHAyiszBHQ7&timeout=600";
+      fetch(url, {
+        body: `{"zip": "15000"}`,
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((tescoResp) => tescoResp.json())
+        .then((tescoJson) => {
+          counter--;
+          this.tescoSlot = "doručuje";
+          if (tescoJson.result === -1) {
+            this.tescoDelivers = "Suchý sortiment";
+          }
+          notify();
+        });
+    },
   },
   mounted() {
     this.display();
@@ -283,7 +317,6 @@ export default {
   #rohlikReturn,
   #tescoReturn {
     display: flex;
-
     margin-bottom: 2vh;
   }
 
