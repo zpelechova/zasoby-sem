@@ -5,8 +5,6 @@ new Vue({
     city: "",
     zip: "",
     loading: false,
-    result: "",
-    warning: ""
   },
   methods: {
     display() {
@@ -17,14 +15,16 @@ new Vue({
       const targetUrl = `https://www.kosik.cz/api/web/transport/windows?street=${encodeURIParam(street.value)}&city=${encodeURIParam(city.value)}&zip=${encodeURIParam(zip.value)}`;
       const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
       fetch(proxyUrl + targetUrl)
-        .then((resp) => resp.json())
-        .then((json) => {
-          console.log(json);
-          this.loading = false;
-          if (json.times[0] === "8:00 - 18:00") {
-            warning.textContent = " Ale dovážíme jen část sortimentu..."
+        .then((kosikResp) => kosikResp.json())
+        .then((kosikJson) => {
+          let kosikSlot = kosikJson.earliest_timeslot;
+          console.log(kosikSlot)
+          if (kosikJson.times[0] === "8:00 - 18:00") {
+            this.kosikDelivers = "Jen suchý sortiment";
+            console.log(kosikJson.times[0])
           }
-        });
+          this.loading = false;
+        })
     }
   }
 });

@@ -29,12 +29,16 @@
       <div id="logos">
         <div>Za pomoc děkujeme:</div>
         <div class="logos">
-          <img src="assets/img/czechitas.png" alt="logo czechitas" />
-          <img src="assets/img/apify.png" alt="logo apify" />
-          <img src="assets/img/barclays.png" alt="logo barclays" />
+          <a href="https://www.czechitas.cz" target="_blank">
+            <img src="assets/img/czechitas.png" alt="logo czechitas"
+          /></a>
+          <a href="https://apify.com/" target="_blank">
+          <img src="assets/img/apify.png" alt="logo apify" /></a>
+          <a href="https://www.barclays.co.uk/" target="_blank">
+          <img src="assets/img/barclays.png" alt="logo barclays" /></a>
         </div>
       </div>
-      <div id="cc">© 2019 COPYRIGHT: ZÁSOBY SEM</div>
+      <div id="cc">© 2019 ZÁSOBY SEM</div>
     </footer>
   </div>
 </template>
