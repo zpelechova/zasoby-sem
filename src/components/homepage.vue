@@ -151,6 +151,8 @@ input:focus {
 .background__image {
   background-image: url(../assets/img/homepage_road.jpg);
   display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   flex-grow: 4;
   flex-shrink: 4;
   justify-content: center;
@@ -164,15 +166,12 @@ input:focus {
 }
 
 .retailer__logos {
-  align-self: center;
-  padding: 3vh;
-  width: 100vw;
-  display: flex;
-  flex-grow: 0.3;
-  flex-shrink: 0.3;
-  align-items: flex-end;
-  align-items: space-evenly;
-  justify-content: space-evenly;
+    padding: 3vh;
+    width: 100vw;
+    display: flex;
+    align-items: flex-end;
+    align-items: space-evenly;
+    justify-content: space-evenly;
 }
 
 .kosik__logo,
@@ -183,6 +182,10 @@ input:focus {
 }
 
 @media screen and (min-width: 767px) {
+  h1{
+    margin-top: 2vh;
+  }
+  
   p {
     font-size: 1.25em;
   }

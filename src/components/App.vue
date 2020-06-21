@@ -39,7 +39,7 @@
       <div class="contact" id="mailto">
           <a href="mailto:zasobysem@gmail.com">KONTAKTUJTE NÁS</a>
         </div>
-      <div id="cc">© 2019 COPYRIGHT: ZÁSOBY SEM</div>
+      <div id="cc">© 2020 COPYRIGHT: ZÁSOBY SEM</div>
     </footer>
   </div>
 </template>
