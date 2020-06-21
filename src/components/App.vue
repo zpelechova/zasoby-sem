@@ -89,6 +89,7 @@ h1 {
   align-items: flex-end;
   justify-content: flex-end;
   flex-grow: 1;
+  cursor: pointer;
 }
 .about__us,
 .pro__rozvozce {
@@ -131,6 +132,9 @@ img {
 a {
   color: #9d9065;
   text-decoration: none;
+}
+.btn {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 991px) {
@@ -180,6 +184,7 @@ a {
   .icon {
     float: left;
     display: block;
+    cursor: pointer;
   }
   .about__us,
   .pro__rozvozce {
@@ -189,7 +194,6 @@ a {
     text-decoration: none;
     font-size: 3.5vh;
     margin: 3vw;
-    border: 2px dotted #ffe355;
   }
   .top__navigation a.icon {
     float: right;

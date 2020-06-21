@@ -116,6 +116,7 @@ input:focus {
   text-align: center;
   margin: 1vh;
   padding: 1vh;
+  letter-spacing: 1px;
 }
 
 .btn:focus {
