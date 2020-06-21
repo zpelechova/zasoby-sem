@@ -16,10 +16,26 @@
       </div>
       <div :class="isOpen ? 'menu' : 'closed__menu'">
         <router-link to="/o_projektu" class="about__us">O PROJEKTU</router-link>
-        <router-link to="/pro_rozvozce" class="pro__rozvozce">ROZVOZCŮM</router-link>
+        <router-link to="/pro_rozvozce" class="pro__rozvozce"
+          >ROZVOZCŮM</router-link
+        >
       </div>
     </div>
     <router-view></router-view>
+    <footer>
+      <div id="mailto">
+        <a href="mailto:zasobysem@gmail.com">KONTAKTUJTE NÁS</a>
+      </div>
+      <div id="logos">
+        <div>Za pomoc děkujeme:</div>
+        <div class="logos">
+          <img src="assets/img/czechitas.png" alt="logo czechitas" />
+          <img src="assets/img/apify.png" alt="logo apify" />
+          <img src="assets/img/barclays.png" alt="logo barclays" />
+        </div>
+      </div>
+      <div id="cc">© 2019 COPYRIGHT: ZÁSOBY SEM</div>
+    </footer>
   </div>
 </template>
 
@@ -28,15 +44,15 @@ export default {
   name: "App",
   data: function() {
     return {
-      isOpen: false
+      isOpen: false,
     };
   },
   methods: {
     toggle() {
       this.isOpen = !this.isOpen;
       console.log("click");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -57,9 +73,9 @@ body {
 }
 
 h1 {
-font-size: 1.2em;
-text-align: center;
-font-family: Cormorant;
+  font-size: 1.2em;
+  text-align: center;
+  font-family: Cormorant;
 }
 
 .top__navigation {
@@ -87,22 +103,43 @@ font-family: Cormorant;
   display: none;
 }
 .zasoby_logo {
- width: 15vw;
-    height: auto;
-    margin-top: 8vh;
-    position: absolute;
-    z-index: 2;
+  width: 15vw;
+  height: auto;
+  margin-top: 8vh;
+  position: absolute;
+  z-index: 2;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+img {
+  width: 10vw;
+}
+#logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+.logos {
+  display: flex;
+  align-items: center;
+}
+a {
+  color: #9d9065;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 991px) {
-  body { 
+  body {
     font-size: 16px;
   }
-
   h1 {
     font-size: 1em;
   }
-  
   .top__navigation {
     display: block;
     max-width: none;
@@ -121,7 +158,7 @@ font-family: Cormorant;
   i.hamburger {
     font-size: 8vw;
     margin: 3vw;
-    text-shadow: 2px 2px 8px #9d9065
+    text-shadow: 2px 2px 8px #9d9065;
   }
   .menu {
     background-color: #9d9065;
@@ -153,9 +190,7 @@ font-family: Cormorant;
     font-size: 3.5vh;
     margin: 3vw;
     border: 2px dotted #ffe355;
-
   }
-
   .top__navigation a.icon {
     float: right;
     display: block;
