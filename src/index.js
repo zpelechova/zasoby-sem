@@ -8,7 +8,9 @@ import Delivery from './components/Delivery';
 // import Parcels from './components/Parcels';
 import App from './components/App';
 import './index.html';
+import VueSimpleAlert from "vue-simple-alert";
 
+Vue.use(VueSimpleAlert);
 Vue.use(VueRouter);
 
 export const router = new VueRouter({

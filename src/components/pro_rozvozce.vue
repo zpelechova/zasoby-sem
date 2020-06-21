@@ -131,8 +131,19 @@ export default {
         <p>${FormattedMessage}</p>
       </div>`,
       }).then((message) =>
-        alert("Už to k nám jede! Těšíme se, jak to spolu rozjedem!")
+        this.$alert(
+          "Těšíme se, jak to spolu rozjedem!",
+          "Už to k nám jede! 🚚",
+          "success"
+        )
       );
+      setTimeout(() => {
+        this.name = "";
+        this.email = "";
+        this.shopName = "";
+        this.webPage = "";
+        this.message = "";
+      }, 2000);
     },
   },
 };

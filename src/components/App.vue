@@ -25,7 +25,7 @@
 
     <footer>
       <div id="logos">
-        <div class="thank__you">Za pomoc děkujeme:</div>
+        <div class="thank__you">PARTNEŘI PROJEKTU:</div>
         <div class="logos">
           <a href="https://www.czechitas.cz" target="_blank">
             <img src="assets/img/czechitas.png" alt="logo czechitas"
@@ -39,7 +39,7 @@
       <div class="contact" id="mailto">
           <a href="mailto:zasobysem@gmail.com">KONTAKTUJTE NÁS</a>
         </div>
-      <div id="cc">© 2020 COPYRIGHT: ZÁSOBY SEM</div>
+      <div id="cc">COPYRIGHT © 2020 ZÁSOBY SEM</div>
     </footer>
   </div>
 </template>
