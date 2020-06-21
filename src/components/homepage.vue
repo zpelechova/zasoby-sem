@@ -11,9 +11,10 @@
               name="street"
               v-model="street"
               placeholder="ULICE A ČÍSLO"
+              required
             />
-            <input type="text" class="form_item" name="city" v-model="city" placeholder="OBEC" />
-            <input type="text" class="form_item" name="zip" v-model="zip" placeholder="PSČ" />
+            <input type="text" class="form_item" name="city" v-model="city" placeholder="OBEC" required/>
+            <input type="text" class="form_item" name="zip" v-model="zip" placeholder="PSČ" required />
           </div>
           <div>
             <button class="btn" type="submit">POSLAT</button>
@@ -113,6 +114,7 @@ input:focus {
   text-align: center;
   margin: 1vh;
   padding: 1vh;
+  letter-spacing: 1px;
 }
 
 .btn:focus {
