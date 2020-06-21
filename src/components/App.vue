@@ -200,9 +200,9 @@ a {
     display: block;
   }
   .top__navigation a:hover {
-    background-color: #ffe355;
+    /* background-color: #ffe355; */
     color: #9d9065;
-    box-shadow: 0 0 10px 8px #ffe355;
+    /* box-shadow: 0 0 10px 8px #ffe355; */
   }
   .top__navigation a.active {
     background-color: #9d9065;
