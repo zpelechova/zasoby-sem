@@ -1,10 +1,16 @@
-<template class = "to__retailers">
+<template class="to__retailers">
   <div class="pro__rozvozce__container">
     <div class="background__image">
       <div class="content">
-        <h1>Chcete, aby naše skvělá stránka nabízela zákazníkům i Váš obchod?</h1>
+        <h1>
+          Chcete, aby naše skvělá stránka nabízela zákazníkům i Váš obchod?
+        </h1>
         <p>Vyplňte formulář a my se Vám ozveme.</p>
-        <form class="let__us__know" method="post" v-on:submit.prevent="sendEmails">
+        <form
+          class="let__us__know"
+          method="post"
+          v-on:submit.prevent="sendEmails"
+        >
           <input
             type="text"
             class="form_item"
@@ -67,7 +73,7 @@ export default {
       shopName: "",
       webPage: "",
       message: "",
-      myMail: "zasobysem@gmail.com"
+      myMail: "zasobysem@gmail.com",
     };
   },
   methods: {
@@ -92,7 +98,7 @@ export default {
         </p>
         <p>Co nejdříve se s Vámi spojíme!</p>
         <p><strong><span>&#129309;</span> Tým Zásoby sem</strong></p>
-      </div>`
+      </div>`,
       });
       // sending email to myself about the new request
       const FormattedMessage = this.message
@@ -123,12 +129,12 @@ export default {
         </p>
         <p><strong>Zásoby sem jedou!!! <span style='font-size:30px;'>&#128762;</span>
         <p>${FormattedMessage}</p>
-      </div>`
-      }).then(message =>
+      </div>`,
+      }).then((message) =>
         alert("Už to k nám jede! Těšíme se, jak to spolu rozjedem!")
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -145,7 +151,7 @@ export default {
 
 ::placeholder {
   color: #9d9065;
-  opacity: 1; 
+  opacity: 1;
 }
 
 :-ms-input-placeholder {
@@ -186,14 +192,13 @@ div.content h1 {
 }
 
 .content {
-  margin: 3em;
+  margin: 2.5em;
   padding: 1em;
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9d9065;
   background-color: #fff9e8;
   border-radius: 30px;
   text-align: center;
-
 }
 
 .pro__rozvozce__container {
@@ -210,7 +215,7 @@ div.content h1 {
   display: flex;
   border-radius: 30px;
   flex-basis: 95vw;
-  height: 88vh;
+  height: 73vh;
   justify-content: center;
   align-items: flex-start;
   min-height: 62vh;
@@ -225,20 +230,16 @@ button {
   border-radius: 9px;
 }
 
-@media screen and (min-width: 576px) and (max-width: 991px) {
-}
-
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 767px) {
   .background__image {
-    height: 62vh;
-    flex-basis: 62vw;
-    margin-bottom: 19vh;
+    height: 79vh;
+    width: 82vw;
   }
 
   .homepage__container {
-  height: 62vh;
-  width: 62vw;
-}
+    height: 73vh;
+    width: 62vw;
+  }
 
   .content {
     width: 32vw;

@@ -21,8 +21,7 @@
           </div>
         </form>
       </div>
-    </div>
-    <div class="retailer__logos">
+      <div class="retailer__logos">
       <a href="https://www.kosik.cz/" target="_blank">
         <img class="kosik__logo" border="0" alt="kosik__logo" src="assets\img\kosik_logo.png" />
       </a>
@@ -32,6 +31,7 @@
       <a href="https://nakup.itesco.cz/groceries/" target="_blank">
         <img class="tesco__logo" border="0" alt="tesco__logo" src="assets\img\tesco_logo.png" />
       </a>
+    </div>
     </div>
   </div>
 </template>
@@ -141,7 +141,7 @@ input:focus {
 }
 
 .homepage__container {
-  height: 89vh;
+  height: 73vh;
   margin: 0 auto;
   width: 95vw;
   display: flex;
@@ -155,7 +155,7 @@ input:focus {
   flex-shrink: 4;
   justify-content: center;
   align-items: center;
-  min-height: 62vh;
+  height: 73vh;
   background-color: #9d9065;
   background-size: cover;
   background-position: center center;
@@ -182,31 +182,16 @@ input:focus {
   height: auto;
 }
 
-@media screen and (min-width: 576px) and (max-width: 991px) {
-  .background__image {
-    min-height: 78vh;
-    padding: 8vh 0vw 8vh 0vw;
-  }
-  .homepage__container {
-    height: auto;
-  }
-  .kosik__logo,
-  .rohlik__logo,
-  .tesco__logo {
-    width: 10vw;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 767px) {
   p {
     font-size: 1.25em;
   }
 
   .background__image {
-    height: 62vh;
-    flex-basis: 62vw;
+    height: 82vh;
+    width: 82vw;
     padding: 8vh 0vw 8vh 0vw;
+    margin: auto;
   }
 
   .content {
@@ -215,14 +200,18 @@ input:focus {
 
   }
   .homepage__container {
-  height: 62vh;
-  width: 62vw;
+  height: unset;
+  width: unset;
+  margin: auto;
 }
 .kosik__logo, 
 .rohlik__logo, 
 .tesco__logo {
-    width: 10vw;
-    height: auto;
+width: 100px;
   }
+
+.retailer__logos {
+  width: 767px;
+}
 }
 </style>

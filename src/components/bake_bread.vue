@@ -49,12 +49,12 @@ export default {
 <style scoped>
 
 .bread__img {
-  width: 80vw;
+  width: 75vw;
   display: block;
   margin: 0vh 2vw 5vh 2vw;
   border-radius: 30px;
   box-shadow: 0 0 10px 8px #9d9065;
-  margin-top: 3vh;
+  margin: 3vh auto 3vh auto;
 }
 .content p {
   font-family: Cabin;
@@ -91,7 +91,7 @@ export default {
   flex-basis: 100vw;
   justify-content: center;
   align-items: flex-start;
-  min-height: 62vh;
+  min-height: 73vh;
   background-color: #9d9065;
   background-size: cover;
   background-position: center center;
@@ -99,7 +99,6 @@ export default {
   border-radius: 30px;
   display: block;
   padding: 20px;
-  margin: 2vh 2vw;
 }
 
 .baking__tips {
@@ -107,18 +106,11 @@ export default {
   color: darkred;
 }
 
-@media screen and (min-width: 576px) and (max-width: 991px) {
-  .background__image {
-  }
-}
-
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 767px) {
   .background__image {
     min-height: 73vh;
-    width: 62vw;
-    flex-basis: 62vw;
+    width: 82vw;
     margin: auto;
-    margin-bottom: 19vh;
   }
 
   .content {
@@ -127,8 +119,11 @@ export default {
 
   .bread__img {
     width: 57vw;
-    margin: 3vh auto;
+    margin: 3vh auto 3vh auto;
+}
 
+  .bake__bread__container {
+    width: 82vw;
   }
 }
 </style>

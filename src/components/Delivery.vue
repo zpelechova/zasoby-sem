@@ -282,7 +282,7 @@ export default {
 }
 
 .delivery__container {
-  min-height: 62vh;
+  height: 73vh;
   margin-left: auto;
   margin-right: auto;
   width: 95vw;
@@ -293,8 +293,8 @@ export default {
 .background__image {
   background-image: url(../assets/img/road-5019069_about_us.jpg);
   display: flex;
-  flex-basis: 95vw;
-  height: 88vh;
+  width: 95vw;
+  height: 73vh;
   justify-content: center;
   align-items: center;
   background-color: #9d9065;
@@ -308,7 +308,7 @@ export default {
   background-image: url(../assets/img/full_supplies_not_available_road.jpg);
   display: flex;
   flex-basis: 95vw;
-  height: 88vh;
+  height: 73vh;
   justify-content: center;
   align-items: flex-start;
   min-height: 62vh;
@@ -329,22 +329,32 @@ export default {
   text-decoration: none;
   color: darkred;
 }
-@media screen and (min-width: 576px) and (max-width: 991px) {
+/* @media screen and (min-width: 576px) and (max-width: 991px) {
   .background__image {
     height: 88vh;
     padding: 8vh 0vw 8vh 0vw;
     margin-bottom: 19vh;
   }
-}
+} */
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 767px) {
   .background__image {
-    height: 73vh;
-    flex-basis: 62vw;
+    height: 79vh;
+    width: 82vw;
     padding: 8vh 0vw 8vh 0vw;
     border-radius: 30px;
-    margin-bottom: 19vh;
   }
+
+  .background__image_parcels {
+    height: 79vh;
+    width: 82vw;
+    margin: auto;
+  }
+
+  .delivery__container {
+  height: unset;
+  width: 82vw;
+}
 
   .loading {
   width: 50vw;

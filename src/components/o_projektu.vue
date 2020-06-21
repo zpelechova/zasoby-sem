@@ -24,6 +24,10 @@ export default {
 </script>
 
 <style scoped>
+
+h1 {
+margin-top: 20px;
+}
 .content p {
   font-family: Cabin;
   font-size: 2vh;
@@ -33,7 +37,8 @@ export default {
 }
 
 .content {
-  margin: 3em;
+  width: 100%;
+  height: 100%;
   padding: 1em;
   opacity: 0.75;
   box-shadow: 0 0 10px 8px #9D9065;
@@ -64,24 +69,25 @@ export default {
   border-radius: 30px;
 }
 
-@media screen and (min-width: 576px) and (max-width: 991px) {
-.background__image {
-height: 89vh;
-margin: auto;
-}
-}
-
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 767px) {
 
  .background__image {
-    min-height: 62vh;
-    flex-basis: 62vw;
+    height: 79vh;
+    width: 82vw;
     margin:0 auto;
     padding: 3vh 0;
   }
 
+  .about__us__container {
+    height: 79vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
   .content {
-    width: 55vw;
+    width: 100%;
     margin: auto;
   }
 }

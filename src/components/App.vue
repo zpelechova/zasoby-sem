@@ -15,25 +15,26 @@
         </a>
       </div>
       <div :class="isOpen ? 'menu' : 'closed__menu'">
-        <router-link to="/o_projektu" class="about__us">O PROJEKTU</router-link>
-        <router-link to="/pro_rozvozce" class="pro__rozvozce"
+        <router-link to="/o_projektu" class="about__us" v-on:click.native="isOpen=false">O PROJEKTU</router-link>
+        <router-link to="/pro_rozvozce" class="pro__rozvozce" v-on:click.native="isOpen=false"
           >PRO ROZVOZCE</router-link
         >
       </div>
     </div>
     <router-view></router-view>
+
     <footer>
-      <div id="mailto">
-        <a href="mailto:zasobysem@gmail.com">KONTAKTUJTE NÁS</a>
-      </div>
       <div id="logos">
-        <div>Za pomoc děkujeme:</div>
+        <div class="thank__you">Za pomoc děkujeme:</div>
         <div class="logos">
           <img src="assets/img/czechitas.png" alt="logo czechitas" />
           <img src="assets/img/apify.png" alt="logo apify" />
           <img src="assets/img/barclays.png" alt="logo barclays" />
         </div>
       </div>
+      <div class="contact" id="mailto">
+          <a href="mailto:zasobysem@gmail.com">KONTAKTUJTE NÁS</a>
+        </div>
       <div id="cc">© 2019 COPYRIGHT: ZÁSOBY SEM</div>
     </footer>
   </div>
@@ -78,10 +79,15 @@ h1 {
   font-family: Cormorant;
 }
 
+#mailto {
+  display: flex;
+  align-items: center
+}
 .top__navigation {
   display: flex;
-  max-width: 62vw;
-  height: 19vh;
+  max-width: 100%;
+  width: 82vw;
+  height: 9vh;
   margin: 0 auto;
 }
 .closed__menu {
@@ -93,8 +99,8 @@ h1 {
 }
 .about__us,
 .pro__rozvozce {
-  margin: 3vh;
-  font-size: 1.2vh;
+      margin: 0px 0 8px 10px;
+  font-size: 2vh;
   text-decoration: none;
   color: #9d9065;
   font-weight: bold;
@@ -104,31 +110,52 @@ h1 {
   display: none;
 }
 .zasoby_logo {
-  width: 15vw;
+  width: 12vw;
   height: auto;
-  margin-top: 8vh;
+  margin-top: 0vh;
   position: absolute;
   z-index: 2;
 }
+
 footer {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  width: 82vw;
+  height: 9vh;
+  margin: 0 auto;
 }
+
+footer div {
+  margin: 2vh auto;
+}
+
 img {
   width: 10vw;
+  margin: 0 1vw;
 }
+
 #logos {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
+  font-size: 10px;
 }
+
+#cc {
+text-align: center;
+font-size: 10px;
+}
+
 .logos {
   display: flex;
   align-items: center;
 }
+
+.contact {
+  font-size: 10px;
+}
+
 a {
   color: #9d9065;
   text-decoration: none;
@@ -137,7 +164,11 @@ a {
   cursor: pointer;
 }
 
-@media screen and (max-width: 991px) {
+ .thank__you {
+  padding: 1rem 0;
+  }
+
+@media screen and (max-width: 767px) {
   body {
     font-size: 16px;
   }
@@ -146,9 +177,10 @@ a {
   }
   .top__navigation {
     display: block;
-    max-width: none;
     height: 10vh;
+    width: 95vw;
   }
+
   .home {
     height: 10vh;
   }
@@ -159,6 +191,16 @@ a {
     position: absolute;
     z-index: 2;
   }
+
+  #logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
   i.hamburger {
     font-size: 8vw;
     margin: 3vw;
@@ -190,10 +232,12 @@ a {
   .pro__rozvozce {
     display: block;
     text-align: center;
-    color: #fff9e8;
+    margin: 1.5vh;
+    font-size: 3vh;
     text-decoration: none;
-    font-size: 40px;
+    color: #fff9e8;
     font-weight: bold;
+    letter-spacing: 3px;
   }
   .about__us {
     margin-top: 5vh;
@@ -204,20 +248,31 @@ a {
     float: right;
     display: block;
   }
-  .about__us:hover {
-    background-color: #ffe355;
-    color: #9d9065;
-    box-shadow: 0 0 10px 8px #ffe355;
-  }
-
-  .pro__rozvozce:hover {
-    background-color: #ffe355;
-    color: #9d9065;
-    /* box-shadow: 0 0 10px 8px #ffe355; */
-  }
   .top__navigation a.active {
     background-color: #9d9065;
     color: #fff9e8;
+  }
+
+  img {
+    width: 25vw;
+  }
+
+  footer {
+    display: flex;
+    width: 95vw;
+    min-height: 9vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+  }
+
+  footer div {
+  margin: 0px;
+}
+
+  .thank__you {
+    text-align: center;
+    padding: 5px 0 0 0;
   }
 }
 </style>
