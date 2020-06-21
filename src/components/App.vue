@@ -14,7 +14,7 @@
           <i class="hamburger fa fa-bars"></i>
         </a>
       </div>
-      <div :class="isOpen ? 'menu' : 'closed__menu'">
+      <div :class="isOpen ? 'menu' : 'closed__menu'" @click="isOpen = false">
         <router-link to="/o_projektu" class="about__us">O PROJEKTU</router-link>
         <router-link to="/pro_rozvozce" class="pro__rozvozce"
           >PRO ROZVOZCE</router-link
