@@ -17,7 +17,7 @@
       <div :class="isOpen ? 'menu' : 'closed__menu'">
         <router-link to="/o_projektu" class="about__us">O PROJEKTU</router-link>
         <router-link to="/pro_rozvozce" class="pro__rozvozce"
-          >ROZVOZCŮM</router-link
+          >PRO ROZVOZCE</router-link
         >
       </div>
     </div>
@@ -93,10 +93,10 @@ h1 {
 .about__us,
 .pro__rozvozce {
   margin: 3vh;
-  font-size: 2.5vh;
+  font-size: 1.2vh;
   text-decoration: none;
   color: #9d9065;
-  font-style: italic;
+  font-weight: bold;
   letter-spacing: 3px;
 }
 .icon {
@@ -187,15 +187,25 @@ a {
     text-align: center;
     color: #fff9e8;
     text-decoration: none;
-    font-size: 3.5vh;
-    margin: 3vw;
-    border: 2px dotted #ffe355;
+    font-size: 40px;
+    font-weight: bold;
   }
+  .about__us {
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+  }
+
   .top__navigation a.icon {
     float: right;
     display: block;
   }
-  .top__navigation a:hover {
+  .about__us:hover {
+    background-color: #ffe355;
+    color: #9d9065;
+    box-shadow: 0 0 10px 8px #ffe355;
+  }
+
+  .pro__rozvozce:hover {
     background-color: #ffe355;
     color: #9d9065;
     box-shadow: 0 0 10px 8px #ffe355;

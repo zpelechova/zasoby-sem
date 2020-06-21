@@ -342,7 +342,7 @@ export default {
     height: 73vh;
     flex-basis: 62vw;
     padding: 8vh 0vw 8vh 0vw;
-    border-radius: 5%;
+    border-radius: 30px;
     margin-bottom: 19vh;
   }
 
@@ -362,7 +362,7 @@ export default {
   .content {
     width: 50vw;
     margin: auto;
-    border-radius: 5%;
+    border-radius: 30px;
   }
 
   .kosik__logo,

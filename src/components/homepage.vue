@@ -19,9 +19,6 @@
             <button class="btn" type="submit">POSLAT</button>
           </div>
         </form>
-
-        <router-link to="/Delivery" class="delivery">ROZVOZ</router-link>
-        <router-link to="/Parcels" class="parcels">BALÍKY</router-link>
       </div>
     </div>
     <div class="retailer__logos">
@@ -132,7 +129,7 @@ input:focus {
     display: flex;
     min-height: 38vh;
     padding: 1em;
-    opacity: 0.75;
+    opacity: 0.8;
     box-shadow: 0 0 10px 8px #9d9065;
     background-color: #fff9e8;
     border-radius: 30px;
