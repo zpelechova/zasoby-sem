@@ -246,7 +246,7 @@ export default {
 }
 
 .free__slots {
-  margin: 1em;
+
   text-align: center;
   text-transform: uppercase;
 }
@@ -360,7 +360,7 @@ export default {
 }
 
   .loading {
-  width: 50vw;
+  width: 32vw;
   box-shadow: 0 0 10px 8px #9d9065;
   border-radius: 30px;
 }
@@ -373,7 +373,7 @@ export default {
   }
 
   .content {
-    width: 50vw;
+    width: 32vw;
     margin: auto;
     border-radius: 30px;
   }

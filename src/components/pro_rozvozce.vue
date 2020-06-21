@@ -214,7 +214,7 @@ div.content h1 {
   background-image: url(../assets/img/woodland-656969_registration.jpg);
   display: flex;
   border-radius: 30px;
-  flex-basis: 95vw;
+  width: 95vw;
   height: 73vh;
   justify-content: center;
   align-items: flex-start;
@@ -238,7 +238,7 @@ button {
 
   .homepage__container {
     height: 73vh;
-    width: 62vw;
+    width: 82vw;
   }
 
   .content {

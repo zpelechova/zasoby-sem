@@ -65,7 +65,7 @@ margin-top: 20px;
   display: flex;
   flex-basis: 100vw;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 73vh;
   background-color: #9d9065;
   background-size: cover;
@@ -76,6 +76,10 @@ margin-top: 20px;
 
 @media screen and (min-width: 767px) {
 
+h1{
+  margin:0px;
+}
+
  .background__image {
     height: 79vh;
     width: 82vw;
@@ -85,14 +89,15 @@ margin-top: 20px;
 
   .about__us__container {
     height: 79vh;
-    margin-left: auto;
-    margin-right: auto;
+    width:82vw;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
 }
 
   .content {
-    width: 100%;
+    width: 50vw;
+    height: 50vh;
     margin: auto;
   }
 }
