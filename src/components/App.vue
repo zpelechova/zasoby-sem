@@ -27,9 +27,13 @@
       <div id="logos">
         <div class="thank__you">Za pomoc děkujeme:</div>
         <div class="logos">
-          <img src="assets/img/czechitas.png" alt="logo czechitas" />
-          <img src="assets/img/apify.png" alt="logo apify" />
-          <img src="assets/img/barclays.png" alt="logo barclays" />
+          <a href="https://www.czechitas.cz" target="_blank">
+            <img src="assets/img/czechitas.png" alt="logo czechitas"
+          /></a>
+          <a href="https://apify.com/" target="_blank">
+          <img src="assets/img/apify.png" alt="logo apify" /></a>
+          <a href="https://www.barclays.co.uk/" target="_blank">
+          <img src="assets/img/barclays.png" alt="logo barclays" /></a>
         </div>
       </div>
       <div class="contact" id="mailto">

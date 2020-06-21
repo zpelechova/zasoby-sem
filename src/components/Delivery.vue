@@ -86,7 +86,6 @@
 import moment from "moment";
 export default {
   name: "Delivery",
-  props: ["street", "city", "zip"],
   data() {
     return {
       loading: true,
@@ -131,7 +130,6 @@ export default {
       // preparing and calling rohlik API
       const rohlikUrl =
         "https://api.apify.com/v2/acts/zuzka~rohlik/run-sync?token=WDXyEPPmbeKBX5eHAyiszBHQ7&timeout=600";
-
       fetch(rohlikUrl, {
         body: `{"street": "${street}", "city": "${city}", "zip": "${zip}"}`,
         method: "POST",
@@ -162,13 +160,18 @@ export default {
       fetch(proxyUrl + kosikUrl)
         .then((kosikResp) => kosikResp.json())
         .then((kosikJson) => {
-          counter--;
           this.kosikSlot = kosikJson.earliest_timeslot;
           if (kosikJson.times[0] === "8:00 - 18:00") {
             this.kosikDelivers = "Jen suchý sortiment";
           }
-          notify(kosikJson.earliest_timeslot);
-        });
+          notify();
+        }).catch(()=>{
+          //sem napisu, co se ma stát kdyz fetch hodi error
+          console.log("Error on Kosik fetch.")
+        }).then(()=>{
+          counter--;
+        })
+        ;
 
       // preparing and calling kosik API Tesco
       const url =
