@@ -172,6 +172,18 @@ input:focus {
     align-items: flex-end;
     align-items: space-evenly;
     justify-content: space-evenly;
+
+    /* margin: 4vh;
+    width: 100vw;
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+    background-color: #fff9e8;
+    opacity: 80%;
+    padding: 1vh;
+    border-radius: 20px; */
 }
 
 .kosik__logo,
