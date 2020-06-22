@@ -45,7 +45,7 @@
             name="webPage"
             id="webPage"
             v-model="webPage"
-            placeholder="WEBOVÁ STRÁNKA*"
+            placeholder="WEBOVÁ STRÁNKA OBCHODU*"
             required
           />
           <input
@@ -206,7 +206,7 @@ div.content h1 {
   margin: 2.5em;
   padding: 1em;
   opacity: 0.75;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 4px #9d9065;
   background-color: #fff9e8;
   border-radius: 30px;
   text-align: center;
@@ -233,7 +233,7 @@ div.content h1 {
   background-color: #9d9065;
   background-size: cover;
   background-position: center center;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 4px #9d9065;
 }
 
 input,
@@ -253,7 +253,8 @@ button {
   }
 
   .content {
-    width: 32vw;
+    width: 50vw;
+    max-width: 500px;
     margin: auto;
   }
 }

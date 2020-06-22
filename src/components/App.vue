@@ -15,8 +15,16 @@
         </a>
       </div>
       <div :class="isOpen ? 'menu' : 'closed__menu'">
-        <router-link to="/o_projektu" class="about__us" v-on:click.native="isOpen=false">O PROJEKTU</router-link>
-        <router-link to="/pro_rozvozce" class="pro__rozvozce" v-on:click.native="isOpen=false"
+        <router-link
+          to="/o_projektu"
+          class="about__us"
+          v-on:click.native="isOpen = false"
+          >O PROJEKTU</router-link
+        >
+        <router-link
+          to="/pro_rozvozce"
+          class="pro__rozvozce"
+          v-on:click.native="isOpen = false"
           >PRO ROZVOZCE</router-link
         >
       </div>
@@ -31,14 +39,16 @@
             <img src="assets/img/czechitas.png" alt="logo czechitas"
           /></a>
           <a href="https://apify.com/" target="_blank">
-          <img src="assets/img/apify.png" alt="logo apify" /></a>
+            <img src="assets/img/apify.png" alt="logo apify"
+          /></a>
           <a href="https://www.barclays.co.uk/" target="_blank">
-          <img src="assets/img/barclays.png" alt="logo barclays" /></a>
+            <img src="assets/img/barclays.png" alt="logo barclays"
+          /></a>
         </div>
       </div>
       <div class="contact" id="mailto">
-          <a href="mailto:zasobysem@gmail.com">KONTAKTUJTE NÁS</a>
-        </div>
+        <a href="mailto:zasobysem@gmail.com">KONTAKTUJTE NÁS</a>
+      </div>
       <div id="cc">COPYRIGHT © 2020 ZÁSOBY SEM</div>
     </footer>
   </div>
@@ -85,7 +95,8 @@ h1 {
 
 #mailto {
   display: flex;
-  align-items: center
+  align-items: center;
+  order: -1;
 }
 .top__navigation {
   display: flex;
@@ -103,18 +114,22 @@ h1 {
 }
 .about__us,
 .pro__rozvozce {
-      margin: 0px 0 8px 10px;
+  margin: 0px 0 6px 10px;
   font-size: 2vh;
   text-decoration: none;
   color: #9d9065;
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
+}
+.pro__rozvozce {
+  margin-right: 3vh;
 }
 .icon {
   display: none;
 }
 .zasoby_logo {
-  width: 12vw;
+  width: 19vw;
+  max-width: 200px;
   height: auto;
   margin-top: 0vh;
   position: absolute;
@@ -126,7 +141,8 @@ footer {
   align-items: center;
   width: 82vw;
   height: 9vh;
-  margin: 0 auto;
+  margin: 8px auto;
+  margin-top: 3vh;
 }
 
 footer div {
@@ -144,16 +160,18 @@ img {
   text-align: center;
   text-transform: uppercase;
   font-size: 10px;
+  flex-direction: column;
 }
 
 #cc {
-text-align: center;
-font-size: 10px;
+  text-align: center;
+  font-size: 10px;
 }
 
 .logos {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 .contact {
@@ -168,9 +186,10 @@ a {
   cursor: pointer;
 }
 
- .thank__you {
-  padding: 1rem 0;
-  }
+.thank__you {
+  padding-bottom: 4px;
+  margin: 0;
+}
 
 @media screen and (max-width: 767px) {
   body {
@@ -190,7 +209,7 @@ a {
   }
   .zasoby_logo {
     width: 35vw;
-    max-width: 130px;
+    max-width: 160px;
     height: auto;
     margin: 0px;
     position: absolute;
@@ -198,22 +217,23 @@ a {
   }
 
   #logos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
 
   i.hamburger {
-    font-size: 8vw;
-    margin: 3vw;
-    text-shadow: 2px 2px 8px #9d9065;
+    font-size: 250%;
+    margin-right: 3vw;
+    text-shadow: 2px 2px 4px #9d9065;
+    margin-top: 3vh;
   }
   .menu {
     background-color: #9d9065;
-    box-shadow: 0 0 10px 8px #9d9065;
+    box-shadow: 0 0 10px 4px #9d9065;
     margin-bottom: 3vh;
     position: absolute;
     left: 0;
@@ -222,7 +242,7 @@ a {
   }
   .closed__menu {
     background-color: #9d9065;
-    box-shadow: 0 0 10px 8px #9d9065;
+    box-shadow: 0 0 10px 4px #9d9065;
     margin-top: 3vh;
     margin-bottom: 3vh;
     display: none;
@@ -260,6 +280,7 @@ a {
 
   img {
     width: 25vw;
+    max-width: 150px;
   }
 
   footer {
@@ -272,12 +293,16 @@ a {
   }
 
   footer div {
-  margin: 0px;
-}
+    margin: 0px;
+  }
 
   .thank__you {
     text-align: center;
     padding: 5px 0 0 0;
+  }
+
+  #mailto {
+    order: 0;
   }
 }
 </style>

@@ -293,7 +293,7 @@ export default {
   width: 62vw;
   min-height: 38vh;
   opacity: 0.75;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 4px #9d9065;
   background-color: #fff9e8;
   border-radius: 30px;
 }
@@ -301,7 +301,7 @@ export default {
 .loading {
   width: 62vw;
   height: 38vh;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 4px #9d9065;
   border-radius: 30px;
 }
 
@@ -324,7 +324,7 @@ export default {
   background-color: #9d9065;
   background-size: cover;
   background-position: center center;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 4px #9d9065;
   border-radius: 30px;
 }
 
@@ -339,7 +339,7 @@ export default {
   background-color: #9d9065;
   background-size: cover;
   background-position: center center;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 4px #9d9065;
   border-radius: 30px;
 }
 
@@ -381,8 +381,9 @@ export default {
   }
 
   .loading {
-    width: 32vw;
-    box-shadow: 0 0 10px 8px #9d9065;
+    width: 50vw;
+    max-width: 500px;
+    box-shadow: 0 0 10px 4px #9d9065;
     border-radius: 30px;
   }
 
@@ -391,10 +392,13 @@ export default {
   #tescoReturn {
     display: flex;
     margin-bottom: 2vh;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .content {
-    width: 32vw;
+    width: 50vw;
+    max-width: 500px;
     margin: auto;
     border-radius: 30px;
   }

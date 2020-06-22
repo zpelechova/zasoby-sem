@@ -46,7 +46,7 @@ margin-top: 20px;
   height: 100%;
   padding: 1em;
   opacity: 0.75;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 4px #9d9065;
   background-color: #fff9e8;
   border-radius: 30px;
 }
@@ -70,7 +70,7 @@ margin-top: 20px;
   background-color: #9d9065;
   background-size: cover;
   background-position: center center;
-  box-shadow: 0 0 10px 8px #9d9065;
+  box-shadow: 0 0 10px 4px #9d9065;
   border-radius: 30px;
 }
 
