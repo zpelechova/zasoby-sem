@@ -263,7 +263,7 @@ export default {
 
 #kosikReturn,
 #rohlikReturn,
-#tescoReturn div {
+#tescoReturn {
   margin-bottom: 2vh;
 }
 
