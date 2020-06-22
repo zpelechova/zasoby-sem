@@ -190,6 +190,7 @@ a {
   }
   .zasoby_logo {
     width: 35vw;
+    max-width: 130px;
     height: auto;
     margin: 0px;
     position: absolute;
