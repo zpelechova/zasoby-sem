@@ -288,9 +288,9 @@ img {
   align-items: center;
 }
 @media screen and (min-width: 767px) {
-  body {
+  /* body {
     font-size: 20px;
-  }
+  } */
   h1 {
     font-size: 1.2em;
   }
