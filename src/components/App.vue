@@ -355,7 +355,7 @@ img {
 
   .content {
     width: 50vw;
-    max-width: 500px;
+    max-width: 700px;
     margin: auto;
   }
 
