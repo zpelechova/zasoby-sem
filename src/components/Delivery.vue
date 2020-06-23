@@ -1,19 +1,19 @@
 <template class="to__retailers">
   <div class="delivery__container">
     <div
+      class="background__image"
       v-bind:class="{
         background__image: delivery,
         background__image_parcels: parcels,
       }"
     >
-      <div class="content" v-if="loading">
-        <img
-          class="loading"
-          id="truck"
-          src="assets\img\loading_free.gif"
-          alt="Načítá se"
-        />
-      </div>
+      <img
+        class="loading"
+        id="truck"
+        src="assets\img\loading_free.gif"
+        alt="Načítá se"
+        v-if="loading"
+      />
       <div class="content" v-if="!loading">
         <h1>ZÁSOBY VÁM MŮŽE DORUČIT:</h1>
         <div class="retailer__logos">
@@ -262,9 +262,11 @@ export default {
 }
 
 #kosikReturn,
-#rohlikReturn,
-#tescoReturn {
+#rohlikReturn {
   margin-bottom: 2vh;
+}
+#tescoReturn {
+  margin-top: 2vh;
 }
 
 .free__slots {
@@ -277,30 +279,10 @@ export default {
   flex-direction: column;
   justify-content: center;
 }
-.content p {
-  font-family: Cabin;
-  font-size: 2vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  text-align: justify;
-}
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 62vw;
-  min-height: 38vh;
-  opacity: 0.75;
-  box-shadow: 0 0 10px 4px #9d9065;
-  background-color: #fff9e8;
-  border-radius: 30px;
-}
-
-.loading {
-  width: 62vw;
-  height: 38vh;
+img#truck.loading {
+  height: 73vh;
+  min-width: 80vw;
   box-shadow: 0 0 10px 4px #9d9065;
   border-radius: 30px;
 }
@@ -316,31 +298,10 @@ export default {
 
 .background__image {
   background-image: url(../assets/img/road-5019069_about_us.jpg);
-  display: flex;
-  width: 95vw;
-  height: 73vh;
-  justify-content: center;
-  align-items: center;
-  background-color: #9d9065;
-  background-size: cover;
-  background-position: center center;
-  box-shadow: 0 0 10px 4px #9d9065;
-  border-radius: 30px;
 }
 
 .background__image_parcels {
   background-image: url(../assets/img/full_supplies_not_available_road.jpg);
-  display: flex;
-  flex-basis: 95vw;
-  height: 73vh;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 62vh;
-  background-color: #9d9065;
-  background-size: cover;
-  background-position: center center;
-  box-shadow: 0 0 10px 4px #9d9065;
-  border-radius: 30px;
 }
 
 .kosik__logo,
@@ -353,38 +314,23 @@ export default {
   text-decoration: none;
   color: darkred;
 }
-/* @media screen and (min-width: 576px) and (max-width: 991px) {
-  .background__image {
-    height: 88vh;
-    padding: 8vh 0vw 8vh 0vw;
-    margin-bottom: 19vh;
-  }
-} */
 
 @media screen and (min-width: 767px) {
-  .background__image {
-    height: 79vh;
-    width: 82vw;
-    padding: 8vh 0vw 8vh 0vw;
-    border-radius: 30px;
-  }
-
-  .background__image_parcels {
-    height: 79vh;
-    width: 82vw;
-    margin: auto;
-  }
-
-  .delivery__container {
-    height: unset;
-    width: 82vw;
-  }
-
-  .loading {
-    width: 50vw;
-    max-width: 500px;
+  img#truck.loading {
+    height: 75vh;
+    min-width: 82vw;
     box-shadow: 0 0 10px 4px #9d9065;
     border-radius: 30px;
+  }
+  h1 {
+    font-size: 16px;
+  }
+
+  .free__slots {
+    text-align: left;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-size: 14px;
   }
 
   #kosikReturn,
@@ -394,13 +340,6 @@ export default {
     margin-bottom: 2vh;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .content {
-    width: 50vw;
-    max-width: 500px;
-    margin: auto;
-    border-radius: 30px;
   }
 
   .kosik__logo,

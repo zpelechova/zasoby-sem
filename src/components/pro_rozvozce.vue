@@ -5,7 +5,7 @@
         <h1>
           Chcete, aby naše skvělá stránka nabízela zákazníkům i Váš obchod?
         </h1>
-        <p>Vyplňte formulář a my se Vám ozveme.</p>
+        <h6>Vyplňte formulář a my se Vám ozveme.</h6>
         <form
           class="let__us__know"
           method="post"
@@ -191,26 +191,11 @@ input:focus {
   outline-color: #ffe355;
 }
 
-div.content h1 {
+/* div.content h1 {
   font-size: 1em;
   text-transform: uppercase;
-}
-.content p {
-  font-family: Cabin;
-  font-size: 2vh;
-  text-align: center;
-  margin: 1vh;
-}
+} */
 
-.content {
-  margin: 2.5em;
-  padding: 1em;
-  opacity: 0.75;
-  box-shadow: 0 0 10px 4px #9d9065;
-  background-color: #fff9e8;
-  border-radius: 30px;
-  text-align: center;
-}
 
 .pro__rozvozce__container {
   min-height: 62vh;
@@ -223,17 +208,6 @@ div.content h1 {
 
 .background__image {
   background-image: url(../assets/img/woodland-656969_registration.jpg);
-  display: flex;
-  border-radius: 30px;
-  width: 95vw;
-  height: 73vh;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 62vh;
-  background-color: #9d9065;
-  background-size: cover;
-  background-position: center center;
-  box-shadow: 0 0 10px 4px #9d9065;
 }
 
 input,

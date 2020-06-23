@@ -150,25 +150,8 @@ input:focus {
   outline-color: #ffe355;
 }
 
-.content p {
-  font-family: Cabin;
-  margin-bottom: 2vh;
-  text-align: justify;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 38vh;
-  padding: 1em;
-  opacity: 0.8;
-  box-shadow: 0 0 10px 4px #9d9065;
-  background-color: #fff9e8;
-  border-radius: 30px;
-  justify-content: center;
-  width: 60vw;
-min-width: 200px;
+.background__image {
+  background-image: url(../assets/img/homepage_road.jpg);
 }
 
 .homepage__container {
@@ -177,23 +160,6 @@ min-width: 200px;
   width: 95vw;
   display: flex;
   flex-direction: column;
-}
-
-.background__image {
-  background-image: url(../assets/img/homepage_road.jpg);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex-grow: 4;
-  flex-shrink: 4;
-  justify-content: center;
-  align-items: center;
-  height: 73vh;
-  background-color: #9d9065;
-  background-size: cover;
-  background-position: center center;
-  box-shadow: 0 0 10px 4px #9d9065;
-  border-radius: 30px;
 }
 
 .retailer__logos {
@@ -217,13 +183,9 @@ min-width: 200px;
   height: auto;
 }
 
-h1 {
-  font-size: 1em;
-  text-align: center;
-  font-family: Cormorant;
-  margin-bottom: 1vh;
+.background__image {
+  background-image: url(../assets/img/homepage_road.jpg);
 }
-
 @media screen and (min-width: 767px) {
   h1 {
     margin-top: 2vh;
@@ -232,24 +194,10 @@ h1 {
   p {
     font-size: 1.25em;
   }
-
   .background__image {
-    height: 80vh;
-    width: 82vw;
-    padding: 8vh 0vw 8vh 0vw;
-    margin: auto;
+    padding: 8vh 0 0 0;
   }
 
-  .content {
-    width: 50vw;
-    max-width: 500px;
-    margin: auto;
-  }
-  .homepage__container {
-    height: unset;
-    width: unset;
-    margin: auto;
-  }
   .kosik__logo,
   .rohlik__logo,
   .tesco__logo {

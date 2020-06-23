@@ -3,8 +3,8 @@ const fetch = require('node-fetch');
 
 Apify.main(async () => {
   const input = await Apify.getValue('INPUT');
-
   const zip = input.zip || process.env.zip;
+  let data = "";
 
   await fetch("https://itesco.cz/Ajax/", {
     "headers": {
@@ -29,9 +29,8 @@ Apify.main(async () => {
   }).then((resp) => resp.json())
   .then((json) => {
     console.log(json);
-    
+    data = json  
   });
-  const data = json.result
-  await Apify.setValue('OUTPUT', data);
-  await Apify.utils.sleep(200);
+    await Apify.setValue('OUTPUT', data);
+    await Apify.utils.sleep(200);
 });

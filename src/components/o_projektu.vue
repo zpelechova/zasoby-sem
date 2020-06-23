@@ -30,27 +30,6 @@ export default {
 
 <style scoped>
 
-h1 {
-margin-top: 20px;
-}
-.content p {
-  font-family: Cabin;
-  font-size: 2vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  text-align: justify;
-}
-
-.content {
-  width: 100%;
-  height: 100%;
-  padding: 1em;
-  opacity: 0.75;
-  box-shadow: 0 0 10px 4px #9d9065;
-  background-color: #fff9e8;
-  border-radius: 30px;
-}
-
 .about__us__container {
   min-height: 62vh;
   margin-left: auto;
@@ -62,16 +41,6 @@ margin-top: 20px;
 
 .background__image {
   background-image: url(../assets/img/supplies_available_road.jpg);
-  display: flex;
-  flex-basis: 100vw;
-  justify-content: center;
-  align-items: center;
-  min-height: 73vh;
-  background-color: #9d9065;
-  background-size: cover;
-  background-position: center center;
-  box-shadow: 0 0 10px 4px #9d9065;
-  border-radius: 30px;
 }
 
 @media screen and (min-width: 767px) {
@@ -79,26 +48,5 @@ margin-top: 20px;
 h1{
   margin:0px;
 }
-
- .background__image {
-    height: 79vh;
-    width: 82vw;
-    margin:0 auto;
-    padding: 3vh 0;
-  }
-
-  .about__us__container {
-    height: 79vh;
-    width:82vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
-  .content {
-    width: 50vw;
-    height: 50vh;
-    margin: auto;
-  }
 }
 </style>

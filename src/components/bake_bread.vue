@@ -1,4 +1,4 @@
-<template class = "to__retailers">
+<template class="to__retailers">
   <div class="bake__bread__container">
     <div class="background__image">
       <div class="content">
@@ -17,37 +17,85 @@
           <li>20 g soli</li>
         </ul>
         <p>POSTUP:</p>
-        <p>Večer před pečením připravíme rozkvas. V misce smícháme mouku s vodou a kváskem a zakryté necháme při pokojové teplote nakvasit přibližně 9 hodin.</p>
-        <p>Asi 2 hodiny před přípravou těsta si smícháme pšeničnou chlebovou mouku s vodou a v zakryté misce necháme při pokojové teplotě proběhnout autolýzu. Je to proces, který nastává po smíchání vody s moukou. Voda aktivuje enzymy v mouce. Během autolýzy se rozvine gluten a těsto bude kompaktnější.</p>
-        <p>Po dvou hodinách autolýzy těsto začneme hníst. Pokud použijeme robota, tak na nízkých otáčkách těsto hněteme cca 4 minuty. Následně přidáme rozkvas a těsto hněteme tak, aby se rozkvas zapracoval. Bude to trvat přibližně 2 minuty. Až potom přidáme sůl a těsto hněteme, dokud se nezačne odlepovat od stěn misky. Mělo by to trvat cca 3 minuty (záleží, jak výkonný robot používate).</p>
-        <p>Pokud nemáte robota a hnětete těsto ručně, bude to trvat trošku déle a ano bude to i náročné, ale jen dostatečně vypracované těsto s vyvinutým lepkem vám zaručí andělský výsledek.</p>
-        <p>Vypracované těsto necháme v zakryté misce kynout přibližně 2 hodiny. Během těchto dvou hodin budeme těsto překládat alespoň třikrát. Potřebujeme v těstě vybudovat pružnost a pevnost, aby se nám chleba na plechu neroztekl.</p>
-        <p>Po posledním prádání necháme těsto odpočinout asi 20 minut a následně ho stočíme do ošatky. Celou ošatku pořádně vysypeme škrobem, aby se chleba na ní nepřilepil. Pracovní desku/podložku si velmi jemně poprášíme moukou a těsto na desku vyklopíme. Dobře vypracované a nakynuté těsto by mělo jednoduše vyklouznout ze skleněné misky. Dáváme si pozor, abychom s těstem příliš nebouchli. Těsto stočíme do ošatky. Stočené těsto přeložíme do ošatky spojem nahoru, přikryjeme igelitem a vložíme do chladničky o teplotě přibližně 5 stupňů. Takto necháme cesto pomaličku fermetovat, dokud nenakyne. Trvá to okolo 19 hodin, dle teploty v lednici.</p>
-        <p>Pokud spěcháte, můžete chleba nechat vykynout při pokojové teplotě obvyklým způsobem.</p>
-        <p>Troubu si před pečením rozehřejeme na nejvyšší možnou teplotu a budeme péct s párou prvních 10 minut. Následně páru z trouby vyvětráme, plech s vodou na zapaření trouby vyndáme a teplotu snížíme na 190 stupňů. Chleba dopečeme 20 minut. Řiďte se podle svojí trouby, každá totiž peče jinak. Upečený chleba necháme zchladit na mřížce. Krájíme, až vychladne.</p>
+        <p>
+          Večer před pečením připravíme rozkvas. V misce smícháme mouku s vodou
+          a kváskem a zakryté necháme při pokojové teplote nakvasit přibližně 9
+          hodin.
+        </p>
+        <p>
+          Asi 2 hodiny před přípravou těsta si smícháme pšeničnou chlebovou
+          mouku s vodou a v zakryté misce necháme při pokojové teplotě
+          proběhnout autolýzu. Je to proces, který nastává po smíchání vody s
+          moukou. Voda aktivuje enzymy v mouce. Během autolýzy se rozvine gluten
+          a těsto bude kompaktnější.
+        </p>
+        <p>
+          Po dvou hodinách autolýzy těsto začneme hníst. Pokud použijeme robota,
+          tak na nízkých otáčkách těsto hněteme cca 4 minuty. Následně přidáme
+          rozkvas a těsto hněteme tak, aby se rozkvas zapracoval. Bude to trvat
+          přibližně 2 minuty. Až potom přidáme sůl a těsto hněteme, dokud se
+          nezačne odlepovat od stěn misky. Mělo by to trvat cca 3 minuty
+          (záleží, jak výkonný robot používate).
+        </p>
+        <p>
+          Pokud nemáte robota a hnětete těsto ručně, bude to trvat trošku déle a
+          ano bude to i náročné, ale jen dostatečně vypracované těsto s
+          vyvinutým lepkem vám zaručí andělský výsledek.
+        </p>
+        <p>
+          Vypracované těsto necháme v zakryté misce kynout přibližně 2 hodiny.
+          Během těchto dvou hodin budeme těsto překládat alespoň třikrát.
+          Potřebujeme v těstě vybudovat pružnost a pevnost, aby se nám chleba na
+          plechu neroztekl.
+        </p>
+        <p>
+          Po posledním prádání necháme těsto odpočinout asi 20 minut a následně
+          ho stočíme do ošatky. Celou ošatku pořádně vysypeme škrobem, aby se
+          chleba na ní nepřilepil. Pracovní desku/podložku si velmi jemně
+          poprášíme moukou a těsto na desku vyklopíme. Dobře vypracované a
+          nakynuté těsto by mělo jednoduše vyklouznout ze skleněné misky. Dáváme
+          si pozor, abychom s těstem příliš nebouchli. Těsto stočíme do ošatky.
+          Stočené těsto přeložíme do ošatky spojem nahoru, přikryjeme igelitem a
+          vložíme do chladničky o teplotě přibližně 5 stupňů. Takto necháme
+          cesto pomaličku fermetovat, dokud nenakyne. Trvá to okolo 19 hodin,
+          dle teploty v lednici.
+        </p>
+        <p>
+          Pokud spěcháte, můžete chleba nechat vykynout při pokojové teplotě
+          obvyklým způsobem.
+        </p>
+        <p>
+          Troubu si před pečením rozehřejeme na nejvyšší možnou teplotu a budeme
+          péct s párou prvních 10 minut. Následně páru z trouby vyvětráme, plech
+          s vodou na zapaření trouby vyndáme a teplotu snížíme na 190 stupňů.
+          Chleba dopečeme 20 minut. Řiďte se podle svojí trouby, každá totiž
+          peče jinak. Upečený chleba necháme zchladit na mřížce. Krájíme, až
+          vychladne.
+        </p>
         <p>Zdroj: https://nelkafood.sk/anjelsky-dobry-kvaskovy-chlieb/</p>
         <p>
-          Podrobnější informace a souvislosti o kvásku a pečení chleba naleznete v tomto dokumentu:
+          Podrobnější informace a souvislosti o kvásku a pečení chleba naleznete
+          v tomto dokumentu:
           <a
             href="https://docs.google.com/document/d/1y8jXcsaL2zV2gRh-YPAkDU2TSoDsc3i1SmzpymkxBHA/edit?usp=sharing"
             class="baking__tips"
             target="_blank"
-          >RADY A TIPY O PEČENÍ CHLEBA</a>
+            >RADY A TIPY O PEČENÍ CHLEBA</a
+          >
         </p>
       </div>
-      <img src="../assets/img/sourdough-bread.jpg" alt="bread" class="bread__img" />
+      <!-- <img src="../assets/img/sourdough-bread.jpg" alt="bread" class="bread__img" /> -->
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Pro__rozvozce"
+  name: "Pro__rozvozce",
 };
 </script>
 
 <style scoped>
-
 .bread__img {
   width: 75vw;
   display: block;
@@ -57,24 +105,19 @@ export default {
   margin: 3vh auto 3vh auto;
 }
 .content p {
-  font-family: Cabin;
-  font-size: 2vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  text-align: justify;
+  text-align: left;
+}
+
+.content {
+  display: inline-block;
+  overflow: auto;
+  margin: 5vh auto;
 }
 
 .ingredience {
   font-family: Cormorant;
-}
-
-.content {
-  margin: auto;
-  padding: 1em;
-  opacity: 0.75;
-  box-shadow: 0 0 10px 4px #9d9065;
-  background-color: #fff9e8;
-  border-radius: 30px;
+  text-align: left;
+  font-size: medium;
 }
 
 .bake__bread__container {
@@ -87,18 +130,6 @@ export default {
 
 .background__image {
   background-image: url(../assets/img/bake_your_own_pastry.jpg);
-  display: flex;
-  flex-basis: 100vw;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 73vh;
-  background-color: #9d9065;
-  background-size: cover;
-  background-position: center center;
-  box-shadow: 0 0 10px 4px #9d9065;
-  border-radius: 30px;
-  display: block;
-  padding: 20px;
 }
 
 .baking__tips {
@@ -107,23 +138,13 @@ export default {
 }
 
 @media screen and (min-width: 767px) {
-  .background__image {
-    min-height: 73vh;
-    width: 82vw;
-    margin: auto;
-  }
-
-  .content {
-    /* min-width: 62vh; */
-  }
-
   .bread__img {
     width: 57vw;
     margin: 3vh auto 3vh auto;
-}
+  }
 
-  .bake__bread__container {
-    width: 82vw;
+  .ingredience {
+    font-size: small;
   }
 }
 </style>
